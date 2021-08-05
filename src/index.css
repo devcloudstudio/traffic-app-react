@@ -1009,7 +1009,12 @@ main {
 }
 
 .lightMode .selectBox {
-  color: var(--light-mode-secondary);
+  color: black;
+  background: var(--light-mode-secondary);
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .selectBox option {
