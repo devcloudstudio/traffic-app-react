@@ -9,8 +9,6 @@ import BrandList from "./BrandList"
 //info
 import Instructions from "../Instructions"
 
-
-
 const Brand = () => {
 
   const [showBrandBox, setShowBrandBox] = useState(null)

@@ -84,7 +84,7 @@ const Videos = (props) => {
   async function getYoutubevideos() {
     setIsLoading(true)
     const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${keyword}&maxResults=${amount}&key=AIzaSyB2cGXPRcxvrqv1_--HRLHPnkmC3TVoUCA&part=snippet`)
-    console.log(keyword)
+    console.log(data)
 
     const { items } = data
 

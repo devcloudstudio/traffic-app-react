@@ -79,13 +79,28 @@
   display: flex;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 740px) {
   .cards .card {
+    width: 100%;
     max-width: 100%;
+    min-width: 100%;
+    align-self: center;
   }
 
   .cards .stat-card {
-    max-width: 100%;
+    align-self: center;
+    width: 10%;
+    min-width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .cards .message-card {
+    align-self: center;
+    width: 10%;
+    min-width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -350,10 +365,12 @@ ul {
 
 .btn-outline-primary {
   border: 1px solid var(--theme-yellow);
+  background: transparent;
 }
 
 .lightMode .btn-outline-primary {
   border: 1px solid var(--light-mode-secondary);
+  background: transparent;
 }
 
 .btn-success {
@@ -389,7 +406,7 @@ ul {
 }
 
 .btn-primary {
-  background: var(--primary-color);
+  background: var(--theme-yellow);
   color: #44464e;
 }
 
@@ -434,6 +451,7 @@ ul {
 /*card button*/
 
 .share {
+  cursor: pointer;
   border: 1px solid var(--theme-yellow);
   margin: 10px;
   border-radius: 50%;
@@ -1654,10 +1672,31 @@ i.edit-icon {
 }
 
 .message-card {
-  min-width: 100% !important;
-  width: 100% !important;
-  padding: 10px;
+  min-width: 350px;
+  box-shadow: var(--thick-box-shadow);
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin: 20px;
+  max-width: 480px;
+  padding: 50px 20px;
+  width: 280px;
+  background: var(--stat-card-bg-dark);
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  /*flex-basis: 30%;*/
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
+
+.lightMode .message-card {
+  background: var(--light-mode-bg);
+}
+
 .message-card--body {
   display: flex;
   align-items: center;
@@ -2652,6 +2691,7 @@ input:checked + .slider:before {
 }
 
 #video-search {
+  cursor: pointer;
   padding: 20px;
   border-radius: 50%;
   border: 3px solid var(--theme-yellow);
@@ -2659,4 +2699,22 @@ input:checked + .slider:before {
 
 .lightMode #video-search {
   border: 3px solid var(--light-mode-secondary);
+}
+
+.card-options .fas,
+.card-options .fa {
+  color: var(--theme-yellow);
+}
+
+.lightMode .card-options .fas,
+.lightMode .card-options .fa {
+  color: black;
+}
+
+.lightMode .card-options .text--primary {
+  color: black;
+}
+
+.btn-primary .fa {
+  color: black;
 }

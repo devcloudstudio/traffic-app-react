@@ -9,7 +9,7 @@ const StatGrid = ({ stats, setModal, showHandler, setModalData }) => {
          <h2 className="text--white mx-2">Stats</h2>
          <div className="cards">
             {stats && stats.map(stat => (
-               <StatCard key={stat} t={stat} setModal={setModal} setModalData={setModalData} showHandler={showHandler} />
+               <StatCard key={stat.title} t={stat} setModal={setModal} setModalData={setModalData} showHandler={showHandler} />
             ))}
          </div>
       </Fragment>

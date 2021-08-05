@@ -9,7 +9,7 @@ const VideoCard = () => {
 					<h3 className="text--bolder text--white sm-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit</h3>
 					<div className="card-options d-flex sm-text">
 						<span className="text--secondary date">21 Jaunary 2013</span>
-						<div className="options"><span className="share d-flex"> <i className="text--primary fas fa-share-alt"></i></span>
+						<div className="options"><span className="share d-flex"> <i className="fas fa-share-alt"></i></span>
 							<button className="btn btn-outline-primary text--primary  m-card-btn">Hijack</button>
 							<button className="btn btn-primary  m-card-btn">Open</button>
 						</div>
