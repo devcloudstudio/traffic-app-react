@@ -18,8 +18,8 @@ const Sidebar = ({ lightMode, setLightMode }) => {
 			<div className="left--wrapper">
 				<div className="logo">Traffik Pilot</div>
 				<div className="user--details">
-					{/* <div className="user-image--container"><img alt="a" className="user-image" src={user.avatar ? user.avatar : 'https://i.ibb.co/9ycTC57/image-2021-07-07-165600.png'} /></div> */}
-					<div className="user-image--container"><img alt="a" className="user-image" src={user.avatar ? user.avatar : 'https://www.fivesquid.com/pics/t2/1578676465-129095-1-1_236px.jpg'} /></div>
+					<div className="user-image--container"><img alt="a" className="user-image" src={user.avatar ? user.avatar : 'https://i.ibb.co/9ycTC57/image-2021-07-07-165600.png'} /></div>
+					{/* <div className="user-image--container"><img alt="a" className="user-image" src={user.avatar ? user.avatar : 'https://www.fivesquid.com/pics/t2/1578676465-129095-1-1_236px.jpg'} /></div> */}
 					<div className="user--info"><span className="fullName text--secondary text--bolder">{user.name ? user.name : 'Name:'}</span><span className="username text--secondary text--light">{user.username ? user.name : 'username:'}</span></div>
 				</div>
 				<ul className="list-item-group sidebar--options">

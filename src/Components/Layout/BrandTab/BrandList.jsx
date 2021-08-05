@@ -16,11 +16,11 @@ const BrandList = ({ setModal, showHandler, query }) => {
 	}, [])
 
 	const listsRef = useRef(new Array())
-	//const brands = useSelector((state) => state.brands) || []
-	const brands = [
+	const brands = useSelector((state) => state.brands) || []
+	/*const brands = [
 		{ _id: 0, name: 'Wick', slogan: `Don't touch my dog`, avatar: 'https://www.fivesquid.com/pics/t2/1578676465-129095-1-1_236px.jpg' },
 		{ _id: 1, name: 'Bros', slogan: `In bros we trust`, avatar: 'https://yt3.ggpht.com/ytc/AAUvwniQL9QXGfvN7wAn-lPcmmzYl4ZUzWt8_8dQE3w_Uw=s900-c-k-c0x00ffffff-no-rj' },
-		{ _id: 2, name: 'MTN', slogan: `Everywhere you go`, avatar: '../../../mock/img/brands/avatar.jpg' },]
+		{ _id: 2, name: 'MTN', slogan: `Everywhere you go`, avatar: '../../../mock/img/brands/avatar.jpg' },]*/
 
 	const brandSelected = (id) => {
 		const r = window.confirm('save this brand')

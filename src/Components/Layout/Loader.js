@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
-
-export const Loader = () =>  {
-    return (
-    	 <div className="backdrop backdrop-loader">
-             <div class="lds-ring"><div></div><div></div><div></div><div></div></div> 
-        </div>
-    )
-}
-
+export const Loader = () => {
+  return (
+    <div className='backdrop backdrop-loader'>
+      <div className='lds-ring'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
+};

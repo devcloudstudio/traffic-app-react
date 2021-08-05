@@ -330,6 +330,7 @@ ul {
 }
 
 .lightMode .share {
+  border: 1px solid var(--light-mode-secondary);
   background: var(--light-mode-secondary);
 }
 
@@ -532,7 +533,7 @@ main {
   background: var(--sidebar-bg-color);
   width: 100%;
   height: 100%;
-  border-radius: 0px 20px 20px 0px;
+  /* border-radius: 0px 20px 20px 0px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -871,7 +872,7 @@ main {
   border: 2px solid var(--primary-color);
 }
 
-.lightMode .navbar .nav-left.border {
+.lightMode .navbar .nav-left .border {
   -webkit-box-flex: 0.5;
   -ms-flex: 0.5;
   flex: 0.5;
@@ -959,7 +960,30 @@ select::-ms-expand {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: var(--theme-yellow);
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.lightMode .navbar .list-item-group .list-item .form--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: var(--light-mode-secondary);
+  border-style: solid;
+  border-radius: 10px;
 }
 
 .navbar .list-item-group .list-item .form--container .nav-form {
@@ -971,10 +995,12 @@ select::-ms-expand {
 
 .nav-form::placeholder {
   color: var(--theme-yellow);
+  background: transparent;
 }
 
 .lightMode .nav-form::placeholder {
   color: var(--light-mode-secondary);
+  background: transparent;
 }
 
 .lightMode .nav-form::placeholder {
@@ -1634,6 +1660,7 @@ i.edit-icon {
     justify-content: stretch;
     width: 100%;
   }
+
   ul.nav.tabs .nav-item {
     border-top: 1px solid #fff;
     vertical-align: middle;
@@ -1665,6 +1692,7 @@ i.edit-icon {
 
   .lightMode ul.nav.tabs .nav-item.active {
     background: var(--light-mode-secondary);
+    color: var(--light-mode-bg);
   }
 
   .nav-item.active .anchor {
@@ -1672,7 +1700,7 @@ i.edit-icon {
   }
 
   .lightMode .nav-item.active .anchor {
-    color: var(--light-mode-secondary);
+    color: var(--light-mode-bg);
   }
 }
 
@@ -1873,6 +1901,11 @@ i.edit-icon {
   .navbar .nav-right .list-item {
     padding: 0px 10px 0px 0px !important;
   }
+
+  .lightMode .navbar .nav-right .list-item {
+    padding: 0px 10px 0px 0px !important;
+  }
+
   .nav--profile {
     margin-left: auto;
   }
