@@ -11,9 +11,6 @@ const Login = (props) => {
 
 	const userSubmit = data => {
 		setIsLoading(true)
-		setTimeout(() => {
-			setIsLoading(false)
-		}, 3000)
 		dispatch(loginUser(data)).then(() => props.history.push('/dashboard'))
 	}
 

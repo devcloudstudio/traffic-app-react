@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
 import "./index.css";
-import "./extension.css";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import decode from "jwt-decode";

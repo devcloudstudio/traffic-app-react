@@ -135,9 +135,9 @@ const Videos = (props) => {
         <div className="container mx-2">
 
           {/*Navbar*/}
-          <div className="navbar my-2">
+          <div className="navbar my-2" style={{ padding: '10px' }}>
             <form onSubmit={handleSubmit}>
-              <ul className="d-flex list-item-group nav nav-left border">
+              <ul className="d-flex list-item-group nav nav-left border nav-list">
                 <li className="list-item">
                   <select className="selectBox text--primary" onChange={e => {
                     setSource(e.target.value)
@@ -166,7 +166,9 @@ const Videos = (props) => {
                   </select>
                 </li>
 
-                <button className="nav-form" style={{ padding: '15px 20px', border: 'none', outline: 'none' }} type="submit"><i className="fas fa-search"></i></button>
+                <li className="list-item">
+                  <button className="search-submit" id="video-search" type="submit"><i className="fas fa-search"></i></button>
+                </li>
               </ul>
             </form>
 
@@ -195,7 +197,7 @@ const Videos = (props) => {
           {isLoading && <Loader />}
         </div>
       </section>
-    </Fragment>
+    </Fragment >
   )
 }
 

@@ -121,10 +121,8 @@ const Trend = (props) => {
                 <li className="list-item">
                   <div className="form--container">
                     <input value={keyword} onChange={e => setKeyWord(e.target.value)} className="nav-form" type="text" placeholder="search by keywords" />
+                    <button className="search-submit" type="submit" ><i className="fas fa-search"></i></button>
                   </div>
-                </li>
-                <li className="">
-                  <button className="nav-form" type="submit" style={{ padding: '15px 20px', border: 'none', outline: 'none' }} ><i className="fas fa-search"></i></button>
                 </li>
               </ul>
             </form>
