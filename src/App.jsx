@@ -1,5 +1,5 @@
-import React,{useEffect,Fragment,useState} from "react"
-import {BrowserRouter as Router, Route,Switch,Link} from "react-router-dom"
+import React, { useEffect, Fragment, useState } from "react"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 
 
 
@@ -28,34 +28,34 @@ import Share from "./Components/Layout/Share"
 
 //Routes
 import { UserRoute } from './Components/Routes/User'
-import { GuestRoute  } from './Components/Routes/Guests'
+import { GuestRoute } from './Components/Routes/Guests'
 
 
 //Hoks
-import {SwitchColor} from "./Hooks/SwitchColor"
+import { SwitchColor } from "./Hooks/SwitchColor"
 
-export const App = ()=>{
-  const [lightMode,setLightMode] = SwitchColor()
-  return(
-     <Fragment>
+export const App = () => {
+  const [lightMode, setLightMode] = SwitchColor()
+  return (
+    <Fragment>
       <main>
         <Router>
-        {/*<Share show={true}/>*/}
-          <Switch> 
-            <GuestRoute  path="/" component={Login} exact />
-            <GuestRoute  path="/login" component={Login} />
+          {/*<Share show={true}/>*/}
+          <Switch>
+            <GuestRoute path="/" component={Login} exact />
+            <GuestRoute path="/login" component={Login} />
             <GuestRoute path="/signup" component={SignUp} />
-            <UserRoute path="/trend" component={()=> <Trend lightMode={lightMode} setLightMode={setLightMode}/>}/>} />
-            <UserRoute path="/videos" component={()=><Video lightMode={lightMode} setLightMode={setLightMode}/>}/>} />
-            <UserRoute path="/profile" component={()=> <Profile lightMode={lightMode} setLightMode={setLightMode}/>} />} />
+            <UserRoute path="/trend" component={() => <Trend lightMode={lightMode} setLightMode={setLightMode} />} />
+            <UserRoute path="/videos" component={() => <Video lightMode={lightMode} setLightMode={setLightMode} />} />
+            <UserRoute path="/profile" component={() => <Profile lightMode={lightMode} setLightMode={setLightMode} />} />
             <UserRoute path="/bonus" component="" />
             <Route path="/logout" component={Logout} />
             <UserRoute path="/trannings" component="" />
-            <UserRoute path="/dashboard" component={()=> <Dashboard lightMode={lightMode} setLightMode={setLightMode}/>} exact  />
-            <UserRoute path="*" component={()=> <Dashboard lightMode={lightMode} setLightMode={setLightMode}/>} />
+            <UserRoute path="/dashboard" component={() => <Dashboard lightMode={lightMode} setLightMode={setLightMode} />} exact />
+            <UserRoute path="*" component={() => <Dashboard lightMode={lightMode} setLightMode={setLightMode} />} />
           </Switch>
         </Router>
       </main>
-     </Fragment>
+    </Fragment>
   )
 }

@@ -31,6 +31,7 @@ import BannerModal from "./Modal/AdModal/Banner"
 import BannerHiajackModal from "./Modal/CtaModal/Banner"
 import { Loader } from "../../Components/Layout/Loader";
 import { getBrands, getLeads, getMessages } from "../../Redux/actions/userActions";
+import NavBarRight from "../../Components/NavBarRight"
 
 const Trend = (props) => {
   const history = useHistory()
@@ -132,28 +133,7 @@ const Trend = (props) => {
               </ul>
             </form>
 
-            <ul className="d-flex nav nav-right">
-              <li className="list-item"><span className="icon--container" onClick={() => props.setLightMode(!props.lightMode)}><i className={`fas ${props.lightMode ? 'fa-sun' : 'fa-moon'}`}></i></span></li>
-
-              <li className="list-item transform-first"><span className="icon--container"><i className="fas fa-question-circle"></i></span></li>
-              <li className="list-item transform-second"><span className="icon--container"><i className="fas fa-bell"></i></span></li>
-              <li className="list-item nav--profile d-flex">
-                <div className="nav-profile--container">
-                  <img alt="a" className="profile--img" src="https://i.ibb.co/9ycTC57/image-2021-07-07-165600.png" />
-                </div>
-                <div className="social-wrapper">
-                  <button onClick={() => setIsMenuHidden(!isMenuHidden)} class="dropdown-menu-btn" type="button" id="dropdownMenuButton">
-                    <span>Name</span><span style={{ margin: '0 5px 0 5px' }} className="fa fa-caret-down"></span>
-                  </button>
-                  <div hidden={isMenuHidden} class="dropdown-menu">
-                    <ul>
-                      <li><a class="dropdown-item" href="/profile">Profile</a></li><hr className="dropdown-items-separator" />
-                      <li><button onClick={logoutHandler} class="dropdown-item btn">Log Out</button></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <NavBarRight />
           </div>
 
           <Tab setTab={setTab} tab={tab} />

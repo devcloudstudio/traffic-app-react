@@ -6,6 +6,7 @@ import ls from 'localstorage-ttl'
 import Share from "./Modal/Share"
 import Hijack from "./Modal/Hijack"
 import StatGrid from "../Stat/StatGrid"
+import NavBarRight from "../../Components/NavBarRight"
 
 const Dashboard = (props) => {
 
@@ -119,19 +120,7 @@ const Dashboard = (props) => {
 								</div>
 							</li>
 						</ul>
-						<ul className="d-flex nav nav-right">
-							<li className="list-item d-sm-none"><button className="btn btn-primary ">3.2k Leads Collected</button></li><i className="fas"></i>
-							<li className="list-item d-sm-none"><button className="btn btn-primary">521 Video Hijacked</button></li>
-							<li className="list-item"><span className="icon--container" onClick={() => props.setLightMode(!props.lightMode)}><i style={{ cursor: 'pointer' }} className={`fas ${props.lightMode ? 'fa-sun' : 'fa-moon'}`}></i></span></li>
-							<li className="list-item transform-first"><span className="icon--container"><i style={{ cursor: 'pointer' }} className="fas fa-question-circle"></i></span></li>
-							<li className="list-item transform-second"><span className="icon--container"><i style={{ cursor: 'pointer' }} className="fas fa-bell"></i></span></li>
-							<li className="list-item nav--profile d-flex">
-								<div className="nav-profile--container">
-									<img className="profile--img" src="https://i.ibb.co/ckQ2jb8/profile.jpg" />
-								</div>
-								<span className="profile-name text--white d-sm-none">Name</span><i style={{ cursor: 'pointer' }} className="text--white fas fa-caret-down d-sm-none"></i>
-							</li>
-						</ul>
+						<NavBarRight />
 					</div>
 
 					<StatGrid stats={stats} setModal={setModal} setModalData={setModalData} showHandler={showHandler} />
