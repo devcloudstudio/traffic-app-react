@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useHistory, useLocation } from "react-router-dom"
 import axios from 'axios'
 import Cards from "./Card/Card";
 import VideoCards from "./Card/VideoCard";
@@ -46,12 +46,18 @@ const Videos = (props) => {
   const [youtubeVidResults, setYoutubeVidResults] = useState([])
   const [vimeoRes, setVimeoResults] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [isMenuHidden, setIsMenuHidden] = useState(true)
 
   const [show, setShow] = useState(false)
   const [tab, setTab] = useState("home")
   const [modal, setModal] = useState(null)
   let [modalData, setModalData] = useState(null)
 
+  const history = useHistory()
+  const logoutHandler = () => {
+    localStorage.removeItem('user-token')
+    history.push("/")
+  }
 
   const onCancel = () => {
     console.log("Close Modal")
@@ -180,7 +186,19 @@ const Videos = (props) => {
               <li className="list-item transform-first"><span className="icon--container"><i className="fas fa-question-circle"></i></span></li>
               <li className="list-item transform-second"><span className="icon--container"><i className="fas fa-bell"></i></span></li>
               <li className="list-item nav--profile d-flex">
-                <div className="nav-profile--container"> <img alt="a" className="profile--img" src="https://i.ibb.co/ckQ2jb8/profile.jpg" /></div><span className="profile-name text--white">Name</span><i className="text--white fas fa-caret-down d-sm-none"></i>
+                <div className="nav-profile--container"> <img alt="a" className="profile--img" src="https://i.ibb.co/ckQ2jb8/profile.jpg" /></div><div class="dropdown">
+                </div>
+                <div className="social-wrapper">
+                  <button onClick={() => setIsMenuHidden(!isMenuHidden)} class="dropdown-menu-btn" type="button" id="dropdownMenuButton">
+                    <span>Name</span><span style={{ margin: '0 5px 0 5px' }} className="fa fa-caret-down"></span>
+                  </button>
+                  <div hidden={isMenuHidden} class="dropdown-menu">
+                    <ul>
+                      <li><a class="dropdown-item" href="/profile">Profile</a></li><hr className="dropdown-items-separator" />
+                      <li><button onClick={logoutHandler} class="dropdown-item btn">Log Out</button></li>
+                    </ul>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>

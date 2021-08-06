@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
 import "./index.css";
+import "./asset/fontawesome-free-5.15.4-web/css/all.min.css";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import decode from "jwt-decode";
