@@ -105,6 +105,7 @@ const Videos = (props) => {
       }
     })
 
+    console.log(data)
     setIsLoading(false)
     setVimeoResults(data.data)
   }

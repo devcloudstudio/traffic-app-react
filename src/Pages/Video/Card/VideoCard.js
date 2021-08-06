@@ -40,7 +40,9 @@ const VideoCard = ({
                     : " No title  "}
                 </h4>
                 <div className='card-options d-flex'>
-                  <span className='text--secondary date'>21 Jaunary 2013</span>
+                  <span className='text--secondary date'>
+                    {video.snippet.publishedAt}
+                  </span>
                   <div className='options'>
                     <span
                       className='share'
