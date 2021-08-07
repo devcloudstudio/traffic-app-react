@@ -794,11 +794,13 @@ main {
   color: var(--secondary-color);
   background: transparent;
 }
+
 .selectBox option {
   color: #44464e !important;
   /*background:  var(--dark-color);*/
   /*border: 2px solid var(--dark-color);*/
 }
+
 .selectBox:focus {
   outline: none;
 }

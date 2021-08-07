@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { useHistory, useLocation } from "react-router-dom"
 import axios from "axios"
 import { useDispatch } from 'react-redux'
@@ -15,7 +15,6 @@ import CreateBrand from "../../Components/Layout/BrandTab/CreateNewBrand"
 import Brands from "../../Components/Layout/BrandTab/Brand"
 import Message from "../../Components/Layout/MessageTab/Message"
 import Thumbnail from "../../Components/Layout/Thumbnail"
-
 
 // Modal
 // import HijackedTrend from "../Layout/hijackTab/HijackedTrend" 
@@ -34,12 +33,6 @@ import { getBrands, getLeads, getMessages } from "../../Redux/actions/userAction
 import NavBarRight from "../../Components/NavBarRight"
 
 const Trend = (props) => {
-  const history = useHistory()
-  const logoutHandler = () => {
-    localStorage.removeItem('user-token')
-    history.push("/")
-  }
-
   const [show, setShow] = useState(false)
   const [tab, setTab] = useState(null)
   const [modal, setModal] = useState(null)
@@ -103,7 +96,7 @@ const Trend = (props) => {
 
 
   return (
-    <Fragment>
+    <>
 
       {/*Modal for only*/}
 
@@ -146,7 +139,7 @@ const Trend = (props) => {
           {isLoading && <Loader />}
         </div>
       </section>
-    </Fragment>
+    </>
   )
 }
 export default Trend

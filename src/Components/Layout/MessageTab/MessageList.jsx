@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { getMessages } from '../../../Redux/actions/userActions'
 import { useLocation } from "react-router-dom"
@@ -28,7 +28,7 @@ const MessageList = ({ setModal, showHandler, query }) => {
 	}
 
 	return (
-		<Fragment>
+		<>
 			<h1 className="text--white brand-heading">Ad Content List</h1>
 			<div className="cards" style={{ padding: '10px' }}>
 				{messages.map((m, index) => {
@@ -36,7 +36,7 @@ const MessageList = ({ setModal, showHandler, query }) => {
 					const bool = query.get("message") === `message${index}`
 
 					return (
-						<div className={`message-card ${query.get("message") === `message${index}` ? "active" : ""}`} key={index} id={`#message${index}`} ref={getRef}>
+						<div className={`brand-card ${query.get("message") === `message${index}` ? "active" : ""}`} key={index} id={`#message${index}`} ref={getRef}>
 							<div className="message-card--body card--body">
 								<img src="https://i.ibb.co/m5823d0/Group-31.png" className="brand-img" />
 								<div className="message-card-topbar justify-content-center">
@@ -45,12 +45,17 @@ const MessageList = ({ setModal, showHandler, query }) => {
 									<button onClick={() => selectMessage(m._id)} className="-bg-secondary-color">Select</button>
 								</div>
 							</div>
+							<div className="brand-options">
+								<span className="btn btn-primary bg-secondary text--primary m-card-btn"><i class="far fa-edit"></i></span>
+								<span className="btn btn-primary bg-secondary text--primary m-card-btn" onclick={() => alert('deleting')}><i class="far fa-trash-alt"></i></span>
+								<span className="btn btn-primary bg-secondary text--primary m-card-btn"><i class="fa fa-eye"></i></span>
+							</div>
 						</div>
 					)
 				})}
 
 			</div>
-		</Fragment>
+		</>
 	)
 }
 export default MessageList

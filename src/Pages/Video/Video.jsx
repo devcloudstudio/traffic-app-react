@@ -152,7 +152,7 @@ const Videos = (props) => {
                     setModalData(null)
                     setModal("")
                   }}>
-                    <option>select Source</option>
+                    <option>Select Source</option>
                     <option value="youtube">Youtube</option>
                     <option value="vimeo">Vimeo</option>
                   </select>

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import ls from 'localstorage-ttl'
 
-
-
 const Social = (props) => {
    console.log("social", props.data)
    const [brandAvatar, setAvatar] = useState('')

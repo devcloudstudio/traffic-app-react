@@ -10,9 +10,10 @@ export function SwitchColor() {
   useEffect(() => {
     if (lightMode) {
       document.body.classList.add("lightMode");
+      localStorage.setItem("theme", "light");
     } else {
       document.body.classList.remove("lightMode");
-      localStorage.setItem("theme", "");
+      localStorage.setItem("theme", "dark");
     }
   }, [lightMode]);
 

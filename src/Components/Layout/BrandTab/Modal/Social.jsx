@@ -1,7 +1,5 @@
-
 import React, { Fragment } from "react"
 import Modal from "../../../Modal/Modal"
-
 
 const ContentPreview = (props) => {
   return (
@@ -28,7 +26,6 @@ const ContentPreview = (props) => {
     </Modal>
   )
 }
-
 
 const Social = (props) => {
   return (
