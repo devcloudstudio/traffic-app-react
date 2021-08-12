@@ -55,10 +55,6 @@ const Videos = (props) => {
   let [modalData, setModalData] = useState(null)
 
   const history = useHistory()
-  const logoutHandler = () => {
-    localStorage.removeItem('user-token')
-    history.push("/")
-  }
 
   const onCancel = () => {
     console.log("Close Modal")

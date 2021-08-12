@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { getMessages } from '../../../Redux/actions/userActions'
 import { useLocation } from "react-router-dom"
 import ls from 'localstorage-ttl'
+import { Loader } from "../../../Components/Layout/Loader"
 
 const MessageList = ({ setModal, showHandler, query }) => {
 
 	const listsRef = useRef(new Array())
+	const [isLoading, setIsLoading] = useState(false)
 	const messages = useSelector(state => state.messages) || []
-	// const messages = [{style:"1",message:"1"},{style:"1",message:"1"},{style:"2",message:"3"},{style:"3",message:"5"}]
+	console.log(messages)
+	//const messages = [{ style: "1", message: "1" }, { style: "1", message: "1" }, { style: "2", message: "3" }, { style: "3", message: "5" }]
 
 
 	const selectMessage = id => {

@@ -15,6 +15,13 @@ import {
 import {setAlert} from "./alertAction"
 import {useDispatch} from "react-redux"*/
 
+import user from "../../mock/user";
+import { api_brands } from "../../mock/brands";
+import messages from "../../mock/messages";
+import leads from "../../mock/leads";
+
+const brands = api_brands;
+
 export const loginUser = (credentials) => async (dispatch) => {
   try {
     const user = await api.user.login(credentials);
@@ -28,7 +35,7 @@ export const loginUser = (credentials) => async (dispatch) => {
 
 export const registerUser = (credentials) => async (dispatch) => {
   try {
-    const user = await api.user.register(credentials);
+    //const user = await api.user.register(credentials);
     dispatch({
       type: USER_LOGGED_IN,
       payload: user,
@@ -39,7 +46,7 @@ export const registerUser = (credentials) => async (dispatch) => {
 
 export const updateProfile = (data) => async (dispatch) => {
   try {
-    const user = await api.user.profileUpate(data);
+    //const user = await api.user.profileUpate(data);
     dispatch({
       type: USER_PROFILE_UPDATED,
       payload: user,
@@ -51,7 +58,7 @@ export const updateProfile = (data) => async (dispatch) => {
 
 // Load user
 export const loadProfile = () => async (dispatch) => {
-  const user = await api.user.getProfileData();
+  //const user = await api.user.getProfileData();
   try {
     dispatch({
       type: LOAD_PROFILE,
@@ -63,7 +70,7 @@ export const loadProfile = () => async (dispatch) => {
 };
 
 export const getBrands = () => async (dispatch) => {
-  const brands = await api.user.fetchBrands();
+  //const brands = await api.user.fetchBrands();
   try {
     dispatch({
       type: GET_BRANDS,
@@ -75,7 +82,8 @@ export const getBrands = () => async (dispatch) => {
 };
 
 export const saveBrand = (brandData, history) => async (dispatch) => {
-  const brand = await api.user.brandSaved(brandData);
+  //const brand = await api.user.brandSaved(brandData);
+  const brand = brands[0];
   try {
     dispatch({
       type: SAVE_BRAND,
@@ -90,7 +98,8 @@ export const saveBrand = (brandData, history) => async (dispatch) => {
 
 export const saveMessage = (content, history) => async (dispatch) => {
   try {
-    const message = await api.user.messageSaved(content);
+    //const message = await api.user.messageSaved(content);
+    const message = messages[0];
     dispatch({
       type: SAVE_MESSAGE,
       payload: message,
@@ -103,7 +112,7 @@ export const saveMessage = (content, history) => async (dispatch) => {
 
 export const getMessages = () => async (dispatch) => {
   try {
-    const messages = await api.user.fetchMessages();
+    //const messages = await api.user.fetchMessages();
     dispatch({
       type: GET_MESSAGES,
       payload: messages,
@@ -115,7 +124,7 @@ export const getMessages = () => async (dispatch) => {
 
 export const getLeads = () => async (dispatch) => {
   try {
-    const leads = await api.user.fetchLeads();
+    //const leads = await api.user.fetchLeads();
     dispatch({
       type: GET_LEADS,
       payload: leads,
