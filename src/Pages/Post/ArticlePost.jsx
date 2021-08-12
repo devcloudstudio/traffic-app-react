@@ -9,7 +9,17 @@ const ArticlePost = (props) => {
   console.log(article)
 
   return (
-    <div style={{ background: 'white', width: '100%', height: '100%' }}>{article.description}</div>
+    <div style={{ background: 'white', width: '100%', height: '100%' }}>
+      <div>
+        <img src={article.img} alt="" />
+      </div>
+      <div>
+        {article.link}
+      </div>
+      <div>
+        {article.description}
+      </div>
+    </div>
   )
 }
 

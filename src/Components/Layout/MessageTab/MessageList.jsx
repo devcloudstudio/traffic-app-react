@@ -41,7 +41,7 @@ const MessageList = ({ setModal, showHandler, query }) => {
 					return (
 						<div className={`brand-card ${query.get("message") === `message${index}` ? "active" : ""}`} key={index} id={`#message${index}`} ref={getRef}>
 							<div className="message-card--body card--body">
-								<img src="https://i.ibb.co/m5823d0/Group-31.png" className="brand-img" />
+								<img src={m.img} className="brand-img" />
 								<div className="message-card-topbar justify-content-center">
 									<h3 className="text--white">{m.style}</h3>
 									<p className="text--white message-content">{m.message}</p>

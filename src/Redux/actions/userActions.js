@@ -24,7 +24,7 @@ const brands = api_brands;
 
 export const loginUser = (credentials) => async (dispatch) => {
   try {
-    const user = await api.user.login(credentials);
+    //const user = await api.user.login(credentials);
     dispatch({
       type: USER_LOGGED_IN,
       payload: user,
