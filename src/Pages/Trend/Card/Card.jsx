@@ -8,11 +8,13 @@ const Card = ({ setModal, showHandler, setModalData }) => {
 		<>
 			<div className="cards">
 				{hijackedData.map((article) => (
-					<div className="card"> {/*CARD Start */}
-						<div><img className="hijack-card-brand-img" alt="a" src={article.brand_img} /></div>
-						<div className="img--container hijack-card-trend-img"><img alt="a" src={article.trend_img} /></div>
+					<div className="card" style={{ position: 'relative' }}> {/*CARD Start */}
+						<div style={{ display: 'flex', flexDirection: 'row' }}>
+							<div><img className="hijack-card-brand-img" alt="a" src={article.brand_img} /></div>
+							<h4 className="text--white" style={{ margin: "5px" }}>{article.title}</h4>
+						</div>
+						<div style={{ border: 'none' }} className="img--container hijack-card-trend-img"><img alt="a" src={article.trend_img} /></div>
 						<div className="card--body">
-							<h4 className="text--white">{article.title}</h4>
 							<div className="card-options d-flex">
 								<span className="text--secondary date">{article.date}</span>
 								<div className="options" ><span className="share" onClick={() => {

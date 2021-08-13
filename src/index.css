@@ -1442,19 +1442,11 @@ ul.nav.tabs li.active {
 }
 
 .hijack-card-brand-img {
-  position: inherit;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 70px;
+  height: 70px;
 }
 
 .hijack-card-trend-img {
-  position: static;
-  z-index: 100;
-  top: -100;
-  left: 0;
 }
 
 .brand-card .card--body {
