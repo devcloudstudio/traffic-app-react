@@ -3,9 +3,6 @@ import { useHistory, useLocation } from "react-router-dom"
 import axios from 'axios'
 import Cards from "./Card/Card";
 import VideoCards from "./Card/VideoCard";
-
-
-
 import Tab from "../../Components/Layout/Tab"
 
 
@@ -14,8 +11,6 @@ import Brand from "../../Components/Layout/BrandTab/Brand"
 import Message from "../../Components/Layout/MessageTab/Message"
 import Thumbnail from "../../Components/Layout/Thumbnail"
 import Connect from "../../Components/Layout/Connect"
-
-
 
 
 //Modal
@@ -116,10 +111,6 @@ const Videos = (props) => {
     setIsLoading(false)
     setVimeoResults(data.data)
   }
-
-
-
-
 
   return (
     <Fragment>
