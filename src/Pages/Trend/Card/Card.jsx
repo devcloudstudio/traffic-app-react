@@ -1,12 +1,14 @@
 import React from "react"
-import hijacked_articles from "../../../mock/hijacked-articles"
+import { useSelector } from 'react-redux'
+
+const hijackedData = useSelector(state => state.hijacks.hijacked_content)  || []
 
 const Card = ({ setModal, showHandler, setModalData }) => {
 
 	return (
 		<>
 			<div className="cards">
-				{hijacked_articles.map((article) => (
+				{hijackedData.map((article) => (
 					<div className="card"> {/*CARD Start */}
 						<div className="img--container"><img alt="a" src={article.img} /></div>
 						<div className="card--body">

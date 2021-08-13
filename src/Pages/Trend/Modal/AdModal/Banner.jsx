@@ -18,8 +18,6 @@ useEffect(() => {
 }, [])
 
 async function cachedIdBrand(){
- 
-
     if(ls.get('brand')) {
       const id = ls.get('brand') 
       const token = localStorage.getItem('user-token')

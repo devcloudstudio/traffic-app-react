@@ -29,7 +29,7 @@ import ConfirmModal from "./Modal/ConfirmModal"
 import BannerModal from "./Modal/AdModal/Banner"
 import BannerHiajackModal from "./Modal/CtaModal/Banner"
 import { Loader } from "../../Components/Layout/Loader";
-import { getBrands, getLeads, getMessages } from "../../Redux/actions/userActions";
+import { getBrands, getLeads, getMessages, getHiJacks } from "../../Redux/actions/userActions";
 import NavBarRight from "../../Components/NavBarRight"
 
 const Trend = (props) => {
@@ -86,6 +86,7 @@ const Trend = (props) => {
     dispatch(getBrands())
     dispatch(getMessages())
     dispatch(getLeads())
+    dispatch(getHiJacks())
   }, [])
 
   return (

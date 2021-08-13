@@ -5,6 +5,7 @@ import profile from './userProfileReducer'
 import brands from './BrandReducer'
 import { messageReducer } from './messageReducer'
 import { leadsReducer } from './leadsReducer'
+import {hijacks} from './hijacked'
 
 
 export default combineReducers({
@@ -12,6 +13,7 @@ export default combineReducers({
     alert,
     profile,
     brands,
+    hijacks,
     messages: messageReducer,
     leads: leadsReducer
 })

@@ -83,6 +83,8 @@ const Dashboard = (props) => {
 	}, []);
 
 
+	
+
 
 	const [show, setShow] = useState(false)
 	const [tab, setTab] = useState(null)
@@ -126,6 +128,7 @@ const Dashboard = (props) => {
 					{isLoading && <Loader />}
 
 				</div>
+				
 			</section>
 			{/*Dashboard*/}
 		</>
