@@ -57,7 +57,7 @@ const BrandList = ({ setModal, showHandler, query }) => {
 								<p className="text--white brand-slogan">{brand.slogan}</p>
 								<div className="brand-options">
 									<span className="icon-btn"><i class="far fa-edit"></i></span>
-									<span className="icon-btn" onclick={() => alert('deleting')}><i class="far fa-trash-alt"></i></span>
+									<span className="icon-btn" onClick={() => alert('deleting')}><i class="far fa-trash-alt"></i></span>
 									<span className="icon-btn" onClick={() => brandSelected(brand._id)}><i class="fa fa-eye"></i></span>
 								</div>
 							</div>

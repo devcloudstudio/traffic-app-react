@@ -1,16 +1,16 @@
 import React from "react"
 import { useSelector } from 'react-redux'
 
-const hijackedData = useSelector(state => state.hijacks.hijacked_content)  || []
-
 const Card = ({ setModal, showHandler, setModalData }) => {
+	const hijackedData = useSelector(state => state.hijacks.hijacked_content) || []
 
 	return (
 		<>
 			<div className="cards">
 				{hijackedData.map((article) => (
 					<div className="card"> {/*CARD Start */}
-						<div className="img--container"><img alt="a" src={article.img} /></div>
+						<div><img className="hijack-card-brand-img" alt="a" src={article.brand_img} /></div>
+						<div className="img--container hijack-card-trend-img"><img alt="a" src={article.trend_img} /></div>
 						<div className="card--body">
 							<h4 className="text--white">{article.title}</h4>
 							<div className="card-options d-flex">

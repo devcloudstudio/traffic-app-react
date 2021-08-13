@@ -21,7 +21,7 @@ const NavBarRight = () => {
       <li className="list-item transform-second"><span className="icon--container"><i className="fas fa-bell"></i></span></li>
       <li className="list-item nav--profile d-flex">
         <div className="social-wrapper">
-          <button onClick={() => setIsMenuHidden(!isMenuHidden)} class="dropdown-menu-btn" type="button" id="dropdownMenuButton">
+          <button onClick={() => setIsMenuHidden(!isMenuHidden)} className="dropdown-menu-btn" type="button" id="dropdownMenuButton">
             <div className="nav-profile--container">
               <img alt="Name" className="profile--img" src="https://i.ibb.co/9ycTC57/image-2021-07-07-165600.png" />
             </div>

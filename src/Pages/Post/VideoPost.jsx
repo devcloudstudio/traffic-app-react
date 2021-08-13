@@ -2,9 +2,11 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import youtubeVideos from '../../mock/youtube-video'
 import { brands } from '../../mock/brands'
-import messages from '../../mock/messages'
+//import messages from '../../mock/messages'
+import { useSelector } from 'react-redux'
 
 const VideoPost = (props) => {
+  const messages = useSelector(state => state.messages) || []
   const { id } = useParams()
   console.log(id)
   let videos = youtubeVideos.items;
@@ -35,7 +37,7 @@ const VideoPost = (props) => {
         </div>
       </div>
       <div className="message-card--body card--body" style={{ margin: '20px' }}>
-        <img src={ad.img} className="brand-img" />
+        <img src={ad.img} className="brand-img" alt="" />
         <div className="message-card-topbar justify-content-center">
           <h3>{ad.style}</h3>
           <p className="message-content">{ad.message}</p>

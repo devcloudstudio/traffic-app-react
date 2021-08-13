@@ -1,4 +1,4 @@
-import React, { useEffect} from "react"
+import React, { useEffect } from "react"
 import { useHistory, useRouteMatch } from "react-router-dom"
 import Modal from "../../../Components/Modal/Modal"
 import ls from 'localstorage-ttl'
@@ -30,27 +30,25 @@ const CardPreview = (props) => {
   }
 
   useEffect(() => {
-      if(props.source === 'youtube'){
-         if (!ls.get(`video-id`, props.modalData.id.videoId, 600000)){
-           ls.set(`video-id`, props.modalData.id.videoId, 600000)
-         }else if(ls.get('video-id')) {
-            const r = window.confirm('Hijack this next video?')
-            if (r === true)  {
-              localStorage.removeItem('video-id')
-              ls.set('video-id', props.modalData.id.videoId, 600000)
-            }
-         }
-        
-         
+    if (props.source === 'youtube') {
+      if (!ls.get(`video-id`, props.modalData.id.videoId, 600000)) {
+        ls.set(`video-id`, props.modalData.id.videoId, 600000)
+      } else if (ls.get('video-id')) {
+        const r = window.confirm('Hijack this next video?')
+        if (r === true) {
+          localStorage.removeItem('video-id')
+          ls.set('video-id', props.modalData.id.videoId, 600000)
+        }
       }
-      // if (!ls.get(`brand`, id, 600000)) {
-			// 	ls.set(`brand`, id, 600000)
-			// } else if (ls.get(`brand`)) {
-			// 	const y = window.confirm('there is already a brand saved, want to save another?')
-			// 	if (y === true) {
-			// 		localStorage.removeItem(`brand`)
-			// 		ls.set(`brand`, id, 600000)
-			// 	}
+    }
+    // if (!ls.get(`brand`, id, 600000)) {
+    // 	ls.set(`brand`, id, 600000)
+    // } else if (ls.get(`brand`)) {
+    // 	const y = window.confirm('there is already a brand saved, want to save another?')
+    // 	if (y === true) {
+    // 		localStorage.removeItem(`brand`)
+    // 		ls.set(`brand`, id, 600000)
+    // 	}
   }, [props.modalData.id.videoId])
 
   return (

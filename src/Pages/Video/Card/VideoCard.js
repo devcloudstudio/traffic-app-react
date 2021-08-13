@@ -1,6 +1,6 @@
 import React from "react";
 
-const VideoCard = ({
+const VideoCards = ({
   setModal,
   showHandler,
   videos,
@@ -155,4 +155,4 @@ const VideoCard = ({
   );
 };
 
-export default VideoCard;
+export default VideoCards;

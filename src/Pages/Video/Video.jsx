@@ -45,7 +45,7 @@ const Videos = (props) => {
   const [isMenuHidden, setIsMenuHidden] = useState(true)
 
   const [show, setShow] = useState(false)
-  const [tab, setTab] = useState("home")
+  const [tab, setTab] = useState("")
   const [modal, setModal] = useState(null)
   let [modalData, setModalData] = useState(null)
 
@@ -54,6 +54,19 @@ const Videos = (props) => {
   const onCancel = () => {
     console.log("Close Modal")
     setShow(false)
+  }
+
+  const rightBtnHandler = (rightBtnContent) => {
+    console.log("Right button content")
+
+    switch (rightBtnContent) {
+      case "Publish":
+        console.log("We're publishing a video")
+        break;
+
+      default:
+        break;
+    }
   }
 
   const showHandler = () => {
@@ -90,8 +103,6 @@ const Videos = (props) => {
     setYoutubeVidResults(items)
   }
 
-
-
   const access_token = '41b228338b45ad58fa557669981834af'
 
   async function getVimeoVideos() {
@@ -118,7 +129,7 @@ const Videos = (props) => {
       {modal === "Share" ? <Share modalData={modalData} show={show} source={source} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
 
 
-      {modal === "Hijack" ? <CardPreview setModalData={setModalData} modalData={modalData} setSource={setSource} source={source} show={show} showHandler={showHandler} setModal={setModal} rightBtnContent="Cancel" onCancel={onCancel} /> : null}
+      {modal === "Hijack" ? <CardPreview setModalData={setModalData} rightBtnHandler={rightBtnHandler} modalData={modalData} setSource={setSource} source={source} show={show} showHandler={showHandler} setModal={setModal} rightBtnContent="Cancel" onCancel={onCancel} /> : null}
       {modal === "BannerModal" ? <BannerModal modalData={modalData} showHandler={showHandler} setModal={setModal} show={show} /> : null}
 
 
