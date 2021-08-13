@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { getMessages } from '../../../Redux/actions/userActions'
 import { useLocation } from "react-router-dom"
 import ls from 'localstorage-ttl'
+import { Loader } from "../../../Components/Layout/Loader"
 
 const MessageList = ({ setModal, showHandler, query }) => {
 
 	const listsRef = useRef(new Array())
+	const [isLoading, setIsLoading] = useState(false)
 	const messages = useSelector(state => state.messages) || []
-	// const messages = [{style:"1",message:"1"},{style:"1",message:"1"},{style:"2",message:"3"},{style:"3",message:"5"}]
+	console.log(messages)
+	//const messages = [{ style: "1", message: "1" }, { style: "1", message: "1" }, { style: "2", message: "3" }, { style: "3", message: "5" }]
 
 
 	const selectMessage = id => {
@@ -38,7 +41,7 @@ const MessageList = ({ setModal, showHandler, query }) => {
 					return (
 						<div className={`brand-card ${query.get("message") === `message${index}` ? "active" : ""}`} key={index} id={`#message${index}`} ref={getRef}>
 							<div className="message-card--body card--body">
-								<img src="https://i.ibb.co/m5823d0/Group-31.png" className="brand-img" />
+								<img src={m.img} className="brand-img" />
 								<div className="message-card-topbar justify-content-center">
 									<h3 className="text--white">{m.style}</h3>
 									<p className="text--white message-content">{m.message}</p>

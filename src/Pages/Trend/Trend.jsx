@@ -38,14 +38,14 @@ const Trend = (props) => {
   const [modal, setModal] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isMenuHidden, setIsMenuHidden] = useState(true)
-
-  let [modalData, setModalData] = useState(null)
+  const [modalData, setModalData] = useState(null)
 
   // let hash = window.location.hash
   const onCancel = () => {
     console.log("Close Modal")
     setShow(false)
   }
+
   const showHandler = () => {
     console.log("show Modal")
     setShow(true)
@@ -53,8 +53,6 @@ const Trend = (props) => {
 
   const [keyword, setKeyWord] = useState('')
   const [trends, setTrends] = useState([])
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -73,9 +71,7 @@ const Trend = (props) => {
       } catch (err) {
         console.log(err.message)
       }
-
     }
-
   }
 
 
@@ -93,12 +89,8 @@ const Trend = (props) => {
     dispatch(getHiJacks())
   }, [])
 
-
-
-
   return (
     <>
-
       {/*Modal for only*/}
 
       {modal === "ContentPreview" ? <ContentPreview modalData={modalData} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
@@ -126,7 +118,6 @@ const Trend = (props) => {
                 </li>
               </ul>
             </form>
-
             <NavBarRight />
           </div>
 
@@ -134,7 +125,7 @@ const Trend = (props) => {
           {tab === "" ? <TrendCard trends={trends} setModal={setModal} setModalData={setModalData} showHandler={showHandler} /> : null}
           {tab === "brand" ? <Brands /> : null}
           {tab === "leads" ? <Leads /> : null}
-          {tab === "hijack" ? <Cards setModal={setModal} showHandler={showHandler} /> : null}
+          {tab === "hijack" ? <Cards setModal={setModal} setModalData={setModalData} showHandler={showHandler} /> : null}
           {tab === "message" ? <Message /> : null}
           {tab === "import" ? <Thumbnail /> : null}
           {isLoading && <Loader />}

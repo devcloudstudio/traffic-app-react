@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Loader = () => {
+export const Loader = ({ loading }) => {
   return (
-    <div className='backdrop backdrop-loader'>
+    <div hidden={!loading} className='backdrop backdrop-loader'>
       <div className='lds-ring'>
         <div></div>
         <div></div>

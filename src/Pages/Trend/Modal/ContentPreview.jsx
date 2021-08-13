@@ -11,7 +11,7 @@ const ContentPreview = (props) => {
         </div>
         <div className="modal-card-preview">
           <div className="modal--image">
-            <img src={t.image !== null ? t.image : ""} />
+            <img src={t.img !== null ? t.img : ""} />
           </div>
           <div className="card--body px-2">
             <h3 className="text--bolder text--white">{t.title !== null ? t.title : " "}</h3>

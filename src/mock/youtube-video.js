@@ -10,7 +10,7 @@
  * title
  */
 
-export default {
+const youtubeVideos = {
   kind: "youtube#searchListResponse",
   etag: "oGAsrDMGRdXezlqrQzpuUNfqbSE",
   nextPageToken: "CAEQAA",
@@ -57,3 +57,5 @@ export default {
     },
   ],
 };
+
+export default youtubeVideos;

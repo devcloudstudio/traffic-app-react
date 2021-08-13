@@ -2,6 +2,11 @@
   "Hijacked Article Card": "src/Pages/Trend/Card/Card.jsx",
   "Hijacked Video Card": "src/Pages/Video/Card/Card.jsx",
   "Video Card": "src/Pages/Video/Card/VideoCard.js",
-  "Ad Affiliates": "src/Components/Layout/MessageTab/MessageList.jsx"
-  "BrandList": "src/Components/Layout/BrandTab/BrandList.jsx"
+  "Ad Affiliates": "src/Components/Layout/MessageTab/MessageList.jsx",
+  "BrandList": "src/Components/Layout/BrandTab/BrandList.jsx",
+  "Hijacked Article Preview": "src/Pages/Trend/Modal/ContentPreview.jsx",
+  "hijack content modal": "src/Pages/Dashboard/Modal/Hijack.jsx",
+
+  "flows": "",
+  "Hijacked": "trendings->trendingCard"
 }

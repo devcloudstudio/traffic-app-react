@@ -6,6 +6,7 @@ import {SAVE_HIJACKED_TREND, GET_HIJACKED_CONTENT, GET_LEADS, LOAD_PROFILE, USER
 //Show error on catch 
 import Alert from "../../Components/Layout/Alert/Alert"
 import {setAlert} from "./alertAction"
+
 import {useDispatch} from "react-redux"
 
 
