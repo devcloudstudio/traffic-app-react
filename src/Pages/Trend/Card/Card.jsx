@@ -1,36 +1,7 @@
 import React from "react"
+import hijacked_articles from "../../../mock/hijacked-articles"
 
-const Card = ({ setModal, showHandler }) => {
-	const hijacked_articles = [
-		{
-			img: "https://images.unsplash.com/photo-1611808786599-82da0b05969e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400",
-			title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
-			date: '21 Jaunary 2013',
-			link: '',
-			description: 'Lorem ipsum dolor sit ata, placeat ea. Sit labore perferendis optio, corporis natur non natus.'
-		},
-		{
-			img: "https://images.unsplash.com/photo-1611808786599-82da0b05969e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400",
-			title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
-			date: '21 Jaunary 2015',
-			link: '',
-			description: 'Lorem ipsum dolor sit ata, placeat ea. Sit labore perferendis optio, corporis natur non natus.'
-		},
-		{
-			img: "https://images.unsplash.com/photo-1611808786599-82da0b05969e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400",
-			title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
-			date: '21 Jaunary 2013',
-			link: '',
-			description: 'Lorem ipsum dolor sit ata, placeat ea. Sit labore perferendis optio, corporis natur non natus.'
-		},
-		{
-			img: "https://images.unsplash.com/photo-1611808786599-82da0b05969e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400",
-			title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
-			date: '21 Jaunary 2013',
-			link: '',
-			description: 'Lorem ipsum dolor sit ata, placeat ea. Sit labore perferendis optio, corporis natur non natus.'
-		},
-	]
+const Card = ({ setModal, showHandler, setModalData }) => {
 
 	return (
 		<>
@@ -48,11 +19,14 @@ const Card = ({ setModal, showHandler }) => {
 								}}> <i className="text--primary fas fa-share-alt"></i></span>
 									<button className="btn btn-outline-primary text--primary m-card-btn" onClick={() => {
 										setModal("Hijack")
+										setModalData(article)
 										showHandler()
 									}}>Hijack</button>
 									<button className="btn btn-primary m-card-btn" onClick={() => {
-										setModal("ContentPreview")
-										showHandler()
+										// setModal("ContentPreview")
+										// setModalData(article)
+										// showHandler()
+										window.open(`http://localhost:3000/post/article/${article.id}`, "_blank")
 									}}><span className="fa fa-eye"></span></button>
 								</div>
 							</div>

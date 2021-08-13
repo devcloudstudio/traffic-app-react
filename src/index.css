@@ -1527,6 +1527,23 @@ ul.nav.tabs li.active {
   display: none;
 }
 
+.post-img {
+  margin: 5px;
+  border-radius: 5px;
+  width: 700px !important;
+  height: auto !important;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .post-img {
+    margin: 0;
+    border-radius: 0;
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
 section.avatar--container {
   position: relative;
   margin: 0 auto;

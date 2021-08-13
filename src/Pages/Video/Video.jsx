@@ -124,7 +124,7 @@ const Videos = (props) => {
 
       {modal === "ContentPreview" ? <ContentPreview modalData={modalData} setSource={setSource} source={source} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
       {modal === "ContentLink" ? <ContentLink modalData={modalData} setSource={setSource} source={source} showHandler={showHandler} setModal={setModal} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
-      {modal === "Share" ? <Share modalData={modalData} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
+      {modal === "Share" ? <Share modalData={modalData} show={show} source={source} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
 
 
       {modal === "Hijack" ? <CardPreview setModalData={setModalData} modalData={modalData} setSource={setSource} source={source} show={show} showHandler={showHandler} setModal={setModal} rightBtnContent="Cancel" onCancel={onCancel} /> : null}

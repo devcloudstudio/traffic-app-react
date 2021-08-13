@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Videos from "./Videos"
 import axios from 'axios'
 import { Loader } from '../../Components/Layout/Loader'
@@ -102,8 +102,7 @@ const Dashboard = (props) => {
 
 
 	return (
-		<Fragment>
-
+		<>
 			{modal === "Share" ? <Share modalData={modalData} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
 			{modal === "Hijack" ? <Hijack stats={stats} modalData={modalData} modalData={modalData} show={show} showHandler={showHandler} setModal={setModal} onCancel={onCancel} /> : null}
 
@@ -129,7 +128,7 @@ const Dashboard = (props) => {
 				</div>
 			</section>
 			{/*Dashboard*/}
-		</Fragment>
+		</>
 	)
 }
 

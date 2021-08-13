@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React from "react"
 import { Link, useLocation, useRouteMatch } from "react-router-dom"
 
 const Tab = ({ tab, setTab }) => {
@@ -25,13 +25,14 @@ const Tab = ({ tab, setTab }) => {
 		<Link to={`${match}#thumbnail`} className="anchor"  >Thumbnail</Link>
 	</li>)
 	const hijvid = (<li className={`nav-item  noselect ${tab === 'hijack' ? 'active' : null}`}>
-		<Link to={`${match}#hijack`} className="anchor"  >Hijacked </Link>
+		<Link to={`${match}#hijack`} className="anchor"  >Hijacked</Link>
 	</li>)
 	const brand = (<li className={`nav-item  noselect ${tab === 'brand' ? 'active' : null}`}>
 		<Link to={`${match}#brand`} className="anchor"  >Your Brand</Link>
 	</li>)
+
 	return (
-		<Fragment>
+		<>
 			<div className="my-2">
 				<ul className="tabs nav">
 					{Home}
@@ -45,11 +46,9 @@ const Tab = ({ tab, setTab }) => {
 					{path === "/videos" ? thumbnail : ""}
 
 					{hijvid}
-
-
 				</ul>
 			</div>
-		</Fragment>
+		</>
 	)
 }
 export default Tab
