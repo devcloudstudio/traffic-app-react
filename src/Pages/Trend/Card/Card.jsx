@@ -1,8 +1,14 @@
-import React from "react"
-import { useSelector } from 'react-redux'
+import React, { useEffect } from "react"
+import { useSelector, useDispatch } from 'react-redux'
+import { getHiJacks } from "../../../Redux/actions/userActions";
 
 const Card = ({ setModal, showHandler, setModalData }) => {
 	const hijackedData = useSelector(state => state.hijacks.hijacked_content) || []
+
+	// const dispatch = useDispatch();
+	// useEffect(() => {
+	// 	dispatch(getHiJacks())
+	// }, [])
 
 	return (
 		<>
@@ -21,11 +27,11 @@ const Card = ({ setModal, showHandler, setModalData }) => {
 									setModal(article.link)
 									showHandler()
 								}}> <i className="text--primary fas fa-share-alt"></i></span>
-									<button className="btn btn-outline-primary text--primary m-card-btn" onClick={() => {
+									{/* <button className="btn btn-outline-primary text--primary m-card-btn" onClick={() => {
 										setModal("Hijack")
 										setModalData(article)
 										showHandler()
-									}}>Hijack</button>
+									}}>Hijack</button> */}
 									<button className="btn btn-primary m-card-btn" onClick={() => {
 										// setModal("ContentPreview")
 										// setModalData(article)

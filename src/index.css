@@ -2547,10 +2547,10 @@ input:checked + .slider:before {
 
 .popup-wrapper .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   color: red;
-  transform: scale(1.4);
+  transform: scale(2);
   cursor: pointer;
 }
 .popup-form {

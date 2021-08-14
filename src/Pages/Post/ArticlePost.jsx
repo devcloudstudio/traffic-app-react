@@ -1,10 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import articles from '../../mock/hijacked-articles'
+import { BANNER, POP_UP } from '../../models/AdStyle'
+import Banner from '../../Components/Layout/Ads/Banner';
+import PopUp from '../../Components/Layout/Ads/PopUp';
 
 const ArticlePost = (props) => {
   const { id } = useParams()
   const article = articles.find(x => x.id === parseInt(id));
+  const [show, setShow] = useState(true)
+  const onClose = () => {
+    setShow(false)
+  }
+
+  if (article == null) {
+    return (
+      <h1>This article is not available</h1>
+    )
+  }
+
+  let ad = null;
+
+  switch (article.message.style) {
+    case BANNER:
+      const { img, message } = article.message
+      ad = show && (<Banner img={img} message={message} onClose={onClose} show={show} />)
+      break;
+    case POP_UP:
+      const optinBaitText = "Join us";
+      const optinButtonText = "Join";
+      const optinPreferredName = "MTN";
+      const optinBestEmail = 'mtn@gmail.com'
+      const data = { optinBaitText, optinButtonText, optinPreferredName, optinBestEmail }
+      ad = show && (<PopUp data={data} onClose={onClose} message={article.message} />)
+      break;
+
+    default:
+      break;
+  }
 
   return (
     <div style={{ width: "100%", height: "100%", background: 'white', display: 'flex', flexDirection: 'column' }}>
@@ -22,13 +55,7 @@ const ArticlePost = (props) => {
           </span>
         </div>
       </div>
-      <div className="message-card--body card--body" style={{ margin: '20px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)' }}>
-        <img src={article.message.img} className="brand-img" />
-        <div className="message-card-topbar justify-content-center">
-          <h3>{article.message.style}</h3>
-          <p className="message-content">{article.message.message}</p>
-        </div>
-      </div>
+      {ad}
       {/* <div style={{ margin: '20px' }}>
         <div className="brand-card-topbar justify-content-center">
           <div>

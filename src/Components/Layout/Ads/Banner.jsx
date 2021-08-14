@@ -1,16 +1,13 @@
 import React from "react"
 
-const Banner = (props) => {
-  console.log("Banner props.data", props.data)
-  console.log(props, 'llll')
+const Banner = ({ img, message, onClose }) => {
+
   return (
     <div className="banner-container">
-
       <div className="banner-wrapper">
-        <img className="ads-avatar" alt="banner" src={props.avatar} />
-        {/* <p>{props.data.title !==null?props.data.title :" " }</p> */}
-        <p>{props.data.message}</p>
-        <span className="close" onClick={() => props.setShow(false)}>
+        <img className="ads-avatar" alt="banner" src={img} />
+        <p>{message}</p>
+        <span className="close" onClick={() => onClose()}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
           </svg>
@@ -19,6 +16,5 @@ const Banner = (props) => {
     </div>
   )
 }
-
 
 export default Banner
