@@ -3,7 +3,6 @@ import { getBrands } from '../../../Redux/actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { Loader } from "../Loader"
 import ls from 'localstorage-ttl'
-import { api_brands } from '../../../mock/brands';
 
 const BrandList = ({ setModal, showHandler, query }) => {
 	const [isLoading, setIsLoading] = useState(true)
@@ -15,8 +14,8 @@ const BrandList = ({ setModal, showHandler, query }) => {
 	}, [])
 
 	const listsRef = useRef(new Array())
-	//const brands = useSelector((state) => state.brands) || []
-	const brands = api_brands;
+	const brands = useSelector((state) => state.brands) || []
+	//const brands = api_brands;
 
 	const brandSelected = (id) => {
 		const r = window.confirm('save this brand')

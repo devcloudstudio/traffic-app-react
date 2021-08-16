@@ -13,6 +13,7 @@ import {
 } from "./types";
 
 import mockHijackedTrends from "../../mock/hijacked-articles";
+import { api_brands } from "../../mock/brands";
 
 //Show error on catch
 import Alert from "../../Components/Layout/Alert/Alert";
@@ -68,7 +69,8 @@ export const loadProfile = () => async (dispatch) => {
 };
 
 export const getBrands = () => async (dispatch) => {
-  const brands = await api.user.fetchBrands();
+  //const brands = await api.user.fetchBrands();
+  const brands = api_brands;
   try {
     dispatch({
       type: GET_BRANDS,

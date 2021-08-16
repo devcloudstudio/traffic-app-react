@@ -32,6 +32,10 @@ import { Loader } from "../../Components/Layout/Loader";
 import { getBrands, getLeads, getMessages, getHiJacks } from "../../Redux/actions/userActions";
 import NavBarRight from "../../Components/NavBarRight"
 
+import mockTrends from '../../mock/trends';
+import BrandChooser from '../../Components/Layout/Choosers/BrandChooser'
+import hijacked_articles from "../../mock/hijacked-articles"
+
 const Trend = (props) => {
   const [show, setShow] = useState(false)
   const [tab, setTab] = useState(null)
@@ -64,7 +68,8 @@ const Trend = (props) => {
     } else {
       setIsLoading(true)
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/trends/fetch/trend?keyword=${keyword}`)
+        //const { data } = await axios.get(`http://localhost:5000/api/trends/fetch/trend?keyword=${keyword}`)
+        const data = mockTrends
         ls.set(`searches-${keyword}`, data, 86400000)
         setIsLoading(false)
         setTrends(data)
@@ -74,6 +79,27 @@ const Trend = (props) => {
     }
   }
 
+  const [hijackObject, setHijackObject] = useState({})
+
+  const setHijackObjectBrand = (brand) => {
+    hijackObject.brand = brand;
+  }
+
+  const setHijackedArticle = (article) => {
+    hijackObject.article = article;
+  }
+
+  const setHijackObjectMessage = (message) => {
+    hijackObject.message = message;
+  }
+
+  const showBrandChooser = () => {
+    setModal("Share")
+  }
+
+  const showMessageChooser = () => {
+    setModal("MessageChooser")
+  }
 
   let { hash } = useLocation()
   useEffect(() => {
@@ -96,9 +122,10 @@ const Trend = (props) => {
       {modal === "ContentPreview" ? <ContentPreview modalData={modalData} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
       {modal === "ContentLink" ? <ContentLink modalData={modalData} showHandler={showHandler} setModal={setModal} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
       {modal === "Share" ? <Share modalData={modalData} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
+      {modal === "BrandChooser" ? <BrandChooser setModal={setModal} showHandler={showHandler} setHijackObjectBrand={setHijackObjectBrand} onCancel={onCancel} /> : null}
 
-      {modal === "Hijack" ? <Hijack modalData={modalData} modalData={modalData} show={show} showHandler={showHandler} setModal={setModal} onCancel={onCancel} /> : null}
-      {modal === "BannerModal" ? <BannerModal modalData={modalData} showHandler={showHandler} setModal={setModal} show={show} /> : null}
+      {modal === "Hijack" ? <Hijack hijackObject={hijackObject} showBrandChooser={showBrandChooser} showMessageChooser={showMessageChooser} modalData={modalData} modalData={modalData} show={show} showHandler={showHandler} setModal={setModal} onCancel={onCancel} hijackObject={hijackObject} /> : null}
+      {modal === "BannerModal" ? <BannerModal modalData={modalData} showHandler={showHandler} setModal={setModal} show={show} onCancel={onCancel} /> : null}
 
       {modal === "BannerHiajackModal" ? <BannerHiajackModal modalData={modalData} showHandler={showHandler} setModal={setModal} show={show} onCancel={onCancel} /> : null}
       {modal === "Confirm" ? <ConfirmModal modalData={modalData} showHandler={showHandler} setModal={setModal} show={show} onCancel={onCancel} /> : null}
@@ -122,7 +149,7 @@ const Trend = (props) => {
           </div>
 
           <Tab setTab={setTab} tab={tab} />
-          {tab === "" ? <TrendCard trends={trends} setModal={setModal} setModalData={setModalData} showHandler={showHandler} /> : null}
+          {tab === "" ? <TrendCard trends={trends} setHijackedArticle={setHijackedArticle} setModal={setModal} setModalData={setModalData} showHandler={showHandler} hijackObject={hijackObject} /> : null}
           {tab === "brand" ? <Brands /> : null}
           {tab === "leads" ? <Leads /> : null}
           {tab === "hijack" ? <Cards setModal={setModal} setModalData={setModalData} showHandler={showHandler} /> : null}

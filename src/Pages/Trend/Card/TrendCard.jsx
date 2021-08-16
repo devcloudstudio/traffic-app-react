@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 
-const TrendCard = ({ setModal, showHandler, trends, setModalData }) => {
+const TrendCard = ({ setModal, showHandler, trends, setModalData, setHijackedArticle }) => {
   return (
     <Fragment>
       <div className="cards">
@@ -18,6 +18,7 @@ const TrendCard = ({ setModal, showHandler, trends, setModalData }) => {
                   setModalData(t)
                 }}> <i className="text--primary fas fa-share-alt"></i></span>
                   <button className="btn btn-outline-primary text--primary m-card-btn" onClick={() => {
+                    setHijackedArticle(t)
                     setModal("Hijack")
                     showHandler()
                     setModalData(t)

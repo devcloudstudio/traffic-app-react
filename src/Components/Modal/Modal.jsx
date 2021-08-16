@@ -4,14 +4,17 @@ import ReactDOM from "react-dom"
 import Backdrop from "./Backdrop"
 
 
-const ModalOverlay = ({ children, onCancel, leftBtnContent, rightBtnContent, isStyle, rightBtnHandler }) => {
+const ModalOverlay = ({ children, onCancel, leftBtnContent, rightBtnContent, isStyle, rightBtnHandler, additionalStyle }) => {
    let style = {
       width: "80%",
       height: "inherit",
       maxWidth: "1000px",
    }
+
+   style = { ...style, ...additionalStyle }
+
    const content = (
-      <div className="modal" style={isStyle && style}>
+      <div className="modal" style={isStyle ? style : additionalStyle}>
          {children}
          {leftBtnContent || rightBtnContent ? (
             <div className="btn--group mx-3" >

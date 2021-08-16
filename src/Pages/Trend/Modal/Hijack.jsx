@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouteMatch, Link, useHistory } from 'react-router-dom'
 import Modal from "../../../Components/Modal/Modal"
 
-
-
 const Hijack = (props) => {
-  let t = props.modalData
+  const { showBrandChooser, showMessageChooser, showHandler, modalData, hijackObject } = props
+  let t = modalData
   let { path } = useRouteMatch()
   let { push } = useHistory()
   const pushHandler = (data, content_id) => {
@@ -29,10 +28,11 @@ const Hijack = (props) => {
           </div>
         </div>
         <div className="btn--group" style={{ flexDirection: "column" }}>
-          <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("brand")}>Select Brand</button>
-          <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("message")}>Select Ad Content</button>
+          {/* <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("brand")}>Select Brand</button>
+          <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("message")}>Select Ad Content</button> */}
+          <button className={`btn text--primary btn--round btn-modal btn-outline-primary ${hijackObject.brand === undefined ? '' : 'nav-form'}`} onClick={() => { props.setModal("BrandChooser"); showHandler() }}>Select Brand</button>
+          <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => { showMessageChooser(); showHandler() }}>Select Ad Content</button>
         </div>
-
       </div>
       <div className="btn--group mx-3" >
         <button className="btn btn-outline-primary btn--round text--primary" onClick={() => props.onCancel()}>Back</button>
@@ -42,7 +42,7 @@ const Hijack = (props) => {
           props.showHandler()
         }}>Next</button>
       </div>
-    </Modal>
+    </Modal >
   )
 }
 
