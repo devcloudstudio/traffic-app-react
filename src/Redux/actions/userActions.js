@@ -14,6 +14,7 @@ import {
 
 import mockHijackedTrends from "../../mock/hijacked-articles";
 import { api_brands } from "../../mock/brands";
+import mockMessages from "../../mock/messages";
 
 //Show error on catch
 import Alert from "../../Components/Layout/Alert/Alert";
@@ -110,7 +111,8 @@ export const saveMessage = (content, history) => async (dispatch) => {
 
 export const getMessages = () => async (dispatch) => {
   try {
-    const messages = await api.user.fetchMessages();
+    //const messages = await api.user.fetchMessages();
+    const messages = mockMessages;
     dispatch({
       type: GET_MESSAGES,
       payload: messages,

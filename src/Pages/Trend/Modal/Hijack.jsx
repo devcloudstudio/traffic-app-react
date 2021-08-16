@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRouteMatch, Link, useHistory } from 'react-router-dom'
 import Modal from "../../../Components/Modal/Modal"
 
 const Hijack = (props) => {
-  const { showBrandChooser, showMessageChooser, showHandler, modalData, hijackObject } = props
+  const { showHandler, modalData, hijackObject, setHijackObjectArticle } = props
   let t = modalData
   let { path } = useRouteMatch()
   let { push } = useHistory()
+  setHijackObjectArticle(t)
   const pushHandler = (data, content_id) => {
     console.log(content_id)
     content_id = `${data}1`
@@ -31,7 +32,7 @@ const Hijack = (props) => {
           {/* <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("brand")}>Select Brand</button>
           <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("message")}>Select Ad Content</button> */}
           <button className={`btn text--primary btn--round btn-modal btn-outline-primary ${hijackObject.brand === undefined ? '' : 'nav-form'}`} onClick={() => { props.setModal("BrandChooser"); showHandler() }}>Select Brand</button>
-          <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => { showMessageChooser(); showHandler() }}>Select Ad Content</button>
+          <button className={`btn text--primary btn--round btn-modal btn-outline-primary ${hijackObject.message === undefined ? '' : 'nav-form'}`} onClick={() => { props.setModal("MessageChooser"); showHandler() }}>Select Ad Content</button>
         </div>
       </div>
       <div className="btn--group mx-3" >
