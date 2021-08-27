@@ -19,7 +19,7 @@ const ModalOverlay = ({ children, onCancel, leftBtnContent, rightBtnContent, isS
          {leftBtnContent || rightBtnContent ? (
             <div className="btn--group mx-3" >
                {leftBtnContent && <button className="btn btn-outline-primary btn--round text--primary" onClick={onCancel}>{leftBtnContent}</button>}
-               {rightBtnContent && <button className="btn btn-outline-primary btn-primary btn--round text--primary" onClick={console.log("Publishing")}>{rightBtnContent}</button>}// TO-DO
+               {rightBtnContent && <button className="btn btn-outline-primary btn-primary btn--round text--primary" onClick={console.log("Publishing")}>{rightBtnContent}</button>}
             </div>
          ) : ""}
       </div>

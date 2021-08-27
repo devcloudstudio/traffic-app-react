@@ -6,9 +6,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cypress open",
+    "jest": "jest --watchAll",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.js(x)"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -44,6 +50,7 @@
   },
   "description": "",
   "devDependencies": {
-    "cypress": "^7.5.0"
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0"
   }
 }

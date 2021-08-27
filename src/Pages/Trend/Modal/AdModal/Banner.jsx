@@ -69,6 +69,7 @@ const BannerModal = (props) => {
       </div>
       <div className="btn--group mx-3" >
         <button className="btn btn-outline-primary btn-primary btn--round text--primary" onClick={() => {
+          // save
           props.showHandler()
           props.setModal("BannerHiajackModal")
         }}>Save</button>

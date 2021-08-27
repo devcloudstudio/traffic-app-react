@@ -38,7 +38,7 @@ const MessageChooser = (props) => {
                     <p className="text--white message-content">{message.message}</p>
                     <div className="brand-options">
                       <span className="btn btn-outline-primary btn-primary btn--round text--primary" onClick={() => {
-                        selectMessage(message._id);
+                        selectMessage(message);
                         setModal("Hijack")
                         showHandler()
                       }}>Choose</span>

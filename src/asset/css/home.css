@@ -1,0 +1,119 @@
+:root {
+  --home-background: #fdf5e3;
+  /* --home-background: cadetblue; */
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("../img/home2.jpg");
+  /* Create the parallax scrolling effect */
+  min-height: 500px;
+  width: 100%;
+  overflow: hidden;
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.home {
+  background: var(--home-background);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-img p {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin: auto;
+  left: 50%;
+  font-size: 20em;
+  text-shadow: black;
+  transform: translate(-50%, -50%);
+  font-size: xxx-large;
+  color: rgb(95, 113, 160);
+  font-family: "Gotham Rounded";
+}
+
+html {
+  background: var(--home-background);
+}
+
+.home .container {
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+  background: var(--home-background);
+  max-height: min-content;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-self: center;
+}
+
+.home .container-reversed {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+  background: var(--home-background);
+  max-height: min-content;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-self: center;
+}
+
+.home .container p {
+  width: 40%;
+  padding: 20px;
+}
+
+@media (max-width: 690px) {
+  .home .container {
+    flex-direction: column;
+  }
+
+  .home .container-reversed {
+    flex-direction: column-reverse;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .home .container p {
+    width: 100%;
+  }
+
+  .home .container-reversed p {
+    width: 100%;
+  }
+}
+
+.title {
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.avatar-img {
+  width: auto;
+  height: 200px;
+  margin: 10px;
+}

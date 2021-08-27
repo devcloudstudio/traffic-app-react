@@ -42,7 +42,7 @@ const BrandChooser = (props) => {
                 <p className="text--white brand-slogan">{brand.slogan}</p>
                 <div className="brand-options">
                   <span className="btn btn-outline-primary btn-primary btn--round text--primary" onClick={() => {
-                    brandSelected(brand._id);
+                    brandSelected(brand);
                     setModal("Hijack")
                     showHandler()
                   }}>Choose</span>

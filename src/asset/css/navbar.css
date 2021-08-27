@@ -1,0 +1,83 @@
+/* home-home-navbar container */
+.home-navbar {
+  overflow: hidden;
+  background-color: transparent;
+  font-family: Arial;
+  width: 100%;
+  height: fit-content;
+  position: fixed;
+}
+
+/* Links inside the home-navbar */
+.home-navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The home-navbar-dropdown container */
+.home-navbar-dropdown {
+  float: left;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+/* home-navbar-dropdown button */
+.home-navbar-dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.home-navbar-dropdown:hover .dropbtn {
+  background-color: rgba(30, 30, 30, 0.2);
+}
+
+/* Add a red background color to home-navbar links on hover */
+.home-navbar a:hover {
+  background-color: rgba(30, 30, 30, 0.2);
+}
+
+/* home-navbar-dropdown content (hidden by default) */
+.home-navbar-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the home-navbar-dropdown */
+.home-navbar-dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dec-bar {
+  width: 100%;
+  color: transparent;
+  height: 2px;
+}
+
+/* Add a grey background color to home-navbar-dropdown links on hover */
+.home-navbar-dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the home-navbar-dropdown menu on hover */
+.home-navbar-dropdown:hover .home-navbar-dropdown-content {
+  display: block;
+}

@@ -14,6 +14,9 @@ import Post from "./Pages/Post/Post";
 //Routes
 import { UserRoute } from './Components/Routes/User'
 import { GuestRoute } from './Components/Routes/Guests'
+import Home from "./Pages/Home/Home"
+import PasswordReset from "./Pages/PasswordReset/PasswordReset"
+import Confirm from "./Pages/Confirm/Confirm"
 
 export const App = () => {
   return (
@@ -22,6 +25,10 @@ export const App = () => {
         <Switch>
           <GuestRoute path="/" component={Login} exact />
           <GuestRoute path="/login" component={Login} />
+          <Route path="/home" component={Home} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/password-reset" component={PasswordReset} />
+          <Route path="/confirm:token" component={Confirm} />
           <Route path="/post" component={Post} />
           <GuestRoute path="/signup" component={SignUp} />
           <UserRoute path="/trend" component={() => <Trend />} />

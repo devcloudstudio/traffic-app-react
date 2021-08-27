@@ -1,0 +1,5 @@
+Cypress Set Up: https://www.cypress.io/blog/2021/04/06/cypress-component-testing-react/
+
+"transform": {
+  "^.+\\.(js|jsx)$": "babel-jest"
+}

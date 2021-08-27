@@ -1,4 +1,8 @@
 {
-    "baseUrl": "http://localhost:3000",
-    "experimentalSutdio":true
+  "baseUrl": "http://localhost:3000",
+  "experimentalSutdio": true,
+  "component": {
+    "testFiles": "**/*.test.{js, ts, jsx, tsx}",
+    "componentolder": "src"
+  }
 }

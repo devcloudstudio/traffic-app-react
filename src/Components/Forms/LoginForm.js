@@ -77,6 +77,22 @@ const LoginForm = ({ submit }) => {
               </button>
               {/* <button className="btn btn-outline-primary btn--round text--primary">Sign Up </button> */}
             </div>
+            <a href='/password-reset'>
+              <span className='text--secondary'>Forgot Password</span>
+            </a>
+            <a
+              href='/signup'
+              style={{
+                position: "fixed",
+                top: "0",
+                paddingTop: "20px",
+                right: "50px",
+              }}
+            >
+              <span className='text--secondary' style={{ color: "white" }}>
+                Don't have an account?
+              </span>
+            </a>
           </form>
         </div>
       </div>
