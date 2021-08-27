@@ -1,6 +1,6 @@
 :root {
   --home-background: #fdf5e3;
-  /* --home-background: cadetblue; */
+  /* --home-background: #fdf5e3; */
 }
 
 .bg-img {
@@ -108,7 +108,7 @@ html {
 }
 
 .title {
-  transform: translate(-50%, -50%);
+  text-align: center;
   color: black;
 }
 
