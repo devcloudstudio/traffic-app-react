@@ -31,26 +31,24 @@ const Home = () => {
         </div>
       </div>
       <h1 className="title">Contacts</h1>
-      <div className="container">
-        <div>
-          <img className="avatar-img" src="https://www.pngarts.com/files/5/Cartoon-Avatar-Transparent-Image.png" alt="img" />
+      <div id="contact-container">
+        <div className="contact">
+          <img src="https://www.pngarts.com/files/5/Cartoon-Avatar-Transparent-Image.png" alt="img" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac cursus tortor. Proin nec ante eu diam egestas
+            aliquam ac sit amet quam. Praesent tincidunt erat diam. Nam ullamcorper magna erat, in tincidunt eros hendrerit
+            sed. Nulla nec risus elit. In dictum mollis porta. Nulla facilisi. Maecenas ut lectus urna. Aenean nec rhoncus
+            nibh, nec venenatis augue. Aliquam at metus aliquet, posuere nisl ac, maximus tellus.
+          </p>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac cursus tortor. Proin nec ante eu diam egestas
-          aliquam ac sit amet quam. Praesent tincidunt erat diam. Nam ullamcorper magna erat, in tincidunt eros hendrerit
-          sed. Nulla nec risus elit. In dictum mollis porta. Nulla facilisi. Maecenas ut lectus urna. Aenean nec rhoncus
-          nibh, nec venenatis augue. Aliquam at metus aliquet, posuere nisl ac, maximus tellus.
-        </p>
-      </div>
-      <div className="container-reversed">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac cursus tortor. Proin nec ante eu diam egestas
-          aliquam ac sit amet quam. Praesent tincidunt erat diam. Nam ullamcorper magna erat, in tincidunt eros hendrerit
-          sed. Nulla nec risus elit. In dictum mollis porta. Nulla facilisi. Maecenas ut lectus urna. Aenean nec rhoncus
-          nibh, nec venenatis augue. Aliquam at metus aliquet, posuere nisl ac, maximus tellus.
-        </p>
-        <div small-img>
-          <img className="avatar-img" src="https://www.pngkey.com/png/full/119-1195864_avatar-transparent-female-cartoon.png" alt="img" />
+        <div className="contact">
+          <img src="https://www.pngkey.com/png/full/119-1195864_avatar-transparent-female-cartoon.png" alt="img" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac cursus tortor. Proin nec ante eu diam egestas
+            aliquam ac sit amet quam. Praesent tincidunt erat diam. Nam ullamcorper magna erat, in tincidunt eros hendrerit
+            sed. Nulla nec risus elit. In dictum mollis porta. Nulla facilisi. Maecenas ut lectus urna. Aenean nec rhoncus
+            nibh, nec venenatis augue. Aliquam at metus aliquet, posuere nisl ac, maximus tellus.
+          </p>
         </div>
       </div>
     </div>
