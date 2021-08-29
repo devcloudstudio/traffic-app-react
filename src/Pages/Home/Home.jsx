@@ -51,6 +51,17 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <div id="social-container">
+        <a className="social nostyle" href="">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <a className="social nostyle" href="">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+        <a className="social nostyle" href="">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+      </div>
     </div>
   )
 }
