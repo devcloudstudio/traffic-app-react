@@ -21,6 +21,7 @@ import Alert from "../../Components/Layout/Alert/Alert";
 import { setAlert } from "./alertAction";
 
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 export const loginUser = (credentials) => async (dispatch) => {
   try {
@@ -70,8 +71,8 @@ export const loadProfile = () => async (dispatch) => {
 };
 
 export const getBrands = () => async (dispatch) => {
-  //const brands = await api.user.fetchBrands();
-  const brands = api_brands;
+  const brands = await api.user.fetchBrands();
+  //const brands = api_brands;
   try {
     dispatch({
       type: GET_BRANDS,
@@ -111,8 +112,8 @@ export const saveMessage = (content, history) => async (dispatch) => {
 
 export const getMessages = () => async (dispatch) => {
   try {
-    //const messages = await api.user.fetchMessages();
-    const messages = mockMessages;
+    const messages = await api.user.fetchMessages();
+    //const messages = mockMessages;
     dispatch({
       type: GET_MESSAGES,
       payload: messages,
@@ -153,6 +154,20 @@ export const saveTrendHijacked = (content) => async (dispatch) => {
     dispatch({
       type: SAVE_HIJACKED_TREND,
       payload: hijackedContent,
+    });
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+export const fetchHijackedVideos = () => async (dispatch) => {
+  try {
+    const { data } = await axios.get(
+      "https://traffic-application.herokuapp.com/api/user/activity/hijack/video"
+    );
+    dispatch({
+      type: "HIJACKED_VIDEOS",
+      payload: data,
     });
   } catch (err) {
     console.log(err.message);

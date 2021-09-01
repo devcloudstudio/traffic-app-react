@@ -17,6 +17,9 @@ import { GuestRoute } from './Components/Routes/Guests'
 import Home from "./Pages/Home/Home"
 import PasswordReset from "./Pages/PasswordReset/PasswordReset"
 import Confirm from "./Pages/Confirm/Confirm"
+import VideoPost from "./Pages/Post/VideoPost"
+import VideoDesc from "./Pages/Post/VideoDesc"
+import ArticlePost from "./Pages/Post/ArticlePost"
 
 export const App = () => {
   return (
@@ -26,6 +29,10 @@ export const App = () => {
           <GuestRoute path="/" component={Login} exact />
           <GuestRoute path="/login" component={Login} />
           <Route path="/home" component={Home} />
+          <Route path="/post/article/:id" component={ArticlePost} />
+
+          <Route path="/post/video/:id" component={VideoPost} />
+          <Route path="/post/vid/:id/:img" component={VideoDesc} />
           <Route path="/signup" component={SignUp} />
           <Route path="/password-reset" component={PasswordReset} />
           <Route path="/confirm:token" component={Confirm} />

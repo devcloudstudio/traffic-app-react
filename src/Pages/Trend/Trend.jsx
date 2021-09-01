@@ -32,7 +32,7 @@ import { Loader } from "../../Components/Layout/Loader";
 import { getBrands, getLeads, getMessages, getHiJacks } from "../../Redux/actions/userActions";
 import NavBarRight from "../../Components/NavBarRight"
 
-import mockTrends from '../../mock/trends';
+//import mockTrends from '../../mock/trends';
 import BrandChooser from '../../Components/Layout/Choosers/BrandChooser'
 import MessageChooser from '../../Components/Layout/Choosers/MessageChooser'
 
@@ -68,8 +68,10 @@ const Trend = (props) => {
     } else {
       setIsLoading(true)
       try {
-        //const { data } = await axios.get(`http://localhost:5000/api/trends/fetch/trend?keyword=${keyword}`)
-        const data = mockTrends
+        const { data } = await axios.get(
+          `https://traffic-application.herokuapp.com/api/trends/fetch/trend?keyword=${keyword}`
+        );
+        //const data = mockTrends
         ls.set(`searches-${keyword}`, data, 86400000)
         setIsLoading(false)
         setTrends(data)

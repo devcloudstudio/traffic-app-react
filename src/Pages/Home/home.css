@@ -5,7 +5,7 @@
 
 .bg-img {
   /* The image used */
-  background-image: url("../img/home2.jpg");
+  background-image: url("../../asset/img/home2.jpg");
   /* Create the parallax scrolling effect */
   min-height: 500px;
   width: 100%;
@@ -54,6 +54,19 @@ img {
   height: 150px;
   width: auto;
   margin: auto;
+}
+
+.contact-img-bg {
+  border-radius: 50%;
+  background: white;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.2s;
+}
+
+.contact-img-bg:hover {
+  transform: scale(1.5);
 }
 
 .home {
@@ -163,6 +176,11 @@ html {
 
 .social {
   margin: 20px;
+  transition: transform 0.2s;
+}
+
+.social:hover {
+  transform: scale(1.5);
 }
 
 a.nostyle:link {

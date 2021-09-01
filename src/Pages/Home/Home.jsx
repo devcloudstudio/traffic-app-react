@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
-import '../../asset/css/home.css'
+import './home.css'
 
 const Home = () => {
   return (
@@ -33,7 +33,9 @@ const Home = () => {
       <h1 className="title">Contacts</h1>
       <div id="contact-container">
         <div className="contact">
-          <img src="https://www.pngarts.com/files/5/Cartoon-Avatar-Transparent-Image.png" alt="img" />
+          <div className="contact-img-bg">
+            <img src="https://www.pngarts.com/files/5/Cartoon-Avatar-Transparent-Image.png" alt="img" />
+          </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac cursus tortor. Proin nec ante eu diam egestas
             aliquam ac sit amet quam. Praesent tincidunt erat diam. Nam ullamcorper magna erat, in tincidunt eros hendrerit
@@ -42,7 +44,9 @@ const Home = () => {
           </p>
         </div>
         <div className="contact">
-          <img src="https://www.pngkey.com/png/full/119-1195864_avatar-transparent-female-cartoon.png" alt="img" />
+          <div className="contact-img-bg">
+            <img src="https://www.pngkey.com/png/full/119-1195864_avatar-transparent-female-cartoon.png" alt="img" />
+          </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac cursus tortor. Proin nec ante eu diam egestas
             aliquam ac sit amet quam. Praesent tincidunt erat diam. Nam ullamcorper magna erat, in tincidunt eros hendrerit

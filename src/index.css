@@ -5,6 +5,8 @@
 * Browsers: last 4 version
 */
 
+@import "animation.css";
+
 :root {
   --theme-yellow: #ffc815;
   --light-mode-bg: beige;
@@ -449,6 +451,10 @@ ul {
   -webkit-box-flex: 0.5;
   -ms-flex: 0.5;
   flex: 0.5;
+}
+
+button {
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -1034,6 +1040,12 @@ main {
 
 .fa-search {
   color: var(--theme-yellow);
+  transition: transform 0.2s;
+  animation: button-click-scale 1s;
+}
+
+.fa-search:hover {
+  transform: scale(2);
 }
 
 .lightMode .fa-search {
@@ -1446,9 +1458,6 @@ ul.nav.tabs li.active {
   height: 70px;
 }
 
-.hijack-card-trend-img {
-}
-
 .brand-card .card--body {
   padding: 10px;
 }
@@ -1459,9 +1468,12 @@ ul.nav.tabs li.active {
 }
 
 .brand-img {
-  max-width: 80px;
+  position: fixed;
+  max-width: 50px;
   margin-right: 10px;
   border-radius: 10px;
+  bottom: 10px;
+  left: 10px;
 }
 
 .brand-slogan {
@@ -2275,10 +2287,12 @@ input:checked + .slider:before {
 
 /*------banner-------------------*/
 .banner-container {
-  position: absolute;
+  font-weight: normal;
+  position: fixed;
   z-index: 999;
   top: 0px;
-  width: 100%;
+  width: fit-content;
+  max-width: 40%;
   background: #fff;
   padding: 10px;
   border-radius: 0px 0px 10px 10px;
@@ -2430,18 +2444,90 @@ input:checked + .slider:before {
   color: var(--light-mode-secondary);
 }
 
-/*------social-------------------*/
-
-.social-container {
-  width: 100%;
-  position: absolute;
+/*popup*/
+.popup-container {
+  font-weight: normal;
+  position: fixed;
+  bottom: 70px;
+  left: 10px;
   z-index: 999;
   display: flex;
-  justify-content: flex-end;
+  max-width: 40%;
+  justify-content: center;
+  align-items: center;
 }
 
-#dropdownMenuButton {
-  border: none;
+.popup-wrapper {
+  width: 100%;
+  height: fit-content;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: column;
+  display: flex;
+}
+
+.popup-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  flex-wrap: nowrap;
+}
+
+.popup-avatar {
+  position: relative;
+  left: -25px;
+  top: -70px;
+  border: 5px solid #fff;
+  border-radius: 50% !important;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.popup-header .close {
+  color: red;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/*------social----------*/
+
+.social-container {
+  font-weight: normal;
+  width: fit-content;
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: column;
+  display: flex;
+}
+
+.social-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.social-header .close {
+  color: red;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .social-wrapper {
@@ -2451,19 +2537,24 @@ input:checked + .slider:before {
   top: 0px;
 }
 
-.chathead {
+.social-chathead {
+  position: fixed;
+  right: -10px;
+  top: -10px;
   border: 5px solid #fff;
   border-radius: 50% !important;
-  max-width: 50px;
-  max-height: 50px;
-  /*margin-right: 10px;*/
-  z-index: 999;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+#dropdownMenuButton {
+  border: none;
 }
 
 .message-widget {
   position: relative;
   width: 250px;
-  background: #fff;
+  background: transparent;
   padding: 40px 20px 40px 20px;
   margin-right: 15px;
   border-radius: 10px;
@@ -2500,59 +2591,11 @@ input:checked + .slider:before {
   font-weight: bolder;
 }
 
-.social-wrapper .close {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: red;
-  transform: scale(1.4);
-  cursor: pointer;
-}
-
-/*popup*/
-.popup-container {
+.bi-x-circle-fill {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.popup-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-avatar {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  border: 5px solid #fff;
-  border-radius: 50% !important;
-  max-width: 80px;
-  max-height: 80px;
-  margin-right: 10px;
-}
-
-.popup-wrapper .close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: red;
-  transform: scale(2);
-  cursor: pointer;
-}
 .popup-form {
   min-width: 300px;
 }
@@ -2859,6 +2902,7 @@ input:checked + .slider:before {
 .search-submit {
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 690px) {
