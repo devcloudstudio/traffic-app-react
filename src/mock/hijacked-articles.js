@@ -36,7 +36,7 @@ const hijacked_articles = [
       "https://images.unsplash.com/photo-1611808786599-82da0b05969e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400",
     title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
     date: "21 Jaunary 2013",
-    link: "https://edition.cnn.com/",
+    link: "https://www.politico.com/news/magazine/2021/08/21/goodbye-to-all-that-clickbait-506479",
     message: {
       _id: "0",
       message:

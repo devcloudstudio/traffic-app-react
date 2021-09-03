@@ -8,7 +8,7 @@ const Banner = ({ brand, ad_data, onClose }) => {
         <img className="ads-avatar" alt="banner" src={brand.avatar} />
         <p>{ad_data.message}</p>
         <span className="close" onClick={() => onClose()}>
-          <span style={{ margin: '10px', cursor: 'pointer' }} class="fa fa-times" aria-hidden="true" onClick={() => onClose()}>
+          <span style={{ margin: '10px', cursor: 'pointer', position: 'relative', 'top': '-7px' }} class="fa fa-times" aria-hidden="true" onClick={() => onClose()}>
           </span>
         </span>
       </div>

@@ -20,7 +20,7 @@ const ArticlePost = (props) => {
   //   fetchTrend()
   // }, [])
 
-  const [article, setArticle] = useState(mock_articles[0])
+  const [article, setArticle] = useState(mock_articles[1])
 
   const fetchTrend = async () => {
     const { data } = await axios.get(`https://traffic-application.herokuapp.com/api/user/activity/hijacked/content/${props.match.params.id}`)
