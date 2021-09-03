@@ -9,6 +9,11 @@ import PopUp from '../../Components/Layout/Ads/PopUp';
 import Social from '../../Components/Layout/Ads/Social'
 
 const ArticlePost = (props) => {
+  /**
+   * NOTE
+   * Brand and AD (message) IDs are provided; so, they should be fetched separately in production code
+   */
+
   // const [article, setArticle] = useState({})
 
   // useEffect(() => {
@@ -37,12 +42,12 @@ const ArticlePost = (props) => {
   }
 
   let ad = null;
-  let { img, message } = article?.message
+  const ad_data = article.message
 
   switch (article?.message?.style) {
 
     case BANNER:
-      ad = show && (<Banner img={img} message={message} onClose={onClose} show={show} />)
+      ad = show && (<Banner brand={article.brand} ad_data={ad_data} onClose={onClose} show={show} />)
       break;
     case POP_UP:
       const optinBaitText = "Join us";
@@ -50,10 +55,10 @@ const ArticlePost = (props) => {
       const optinPreferredName = "MTN";
       const optinBestEmail = 'mtn@gmail.com'
       const data = { optinBaitText, optinButtonText, optinPreferredName, optinBestEmail }
-      ad = show && (<PopUp data={data} onClose={onClose} img={img} message={message} />)
+      ad = show && (<PopUp data={data} onClose={onClose} ad_data={ad_data} brand={article.brand} ad_data={ad_data} />)
       break;
     case SOCIAL:
-      ad = show && (<Social trafficSent='' color='' img={img} message={message} onClose={onClose} show={show} />)
+      ad = show && (<Social trafficSent='' color='' brand={article.brand} ad_data={ad_data} onClose={onClose} show={show} />)
       break;
 
     default:

@@ -6,9 +6,10 @@ import { useDispatch } from "react-redux";
 
 const PasswordReset = () => {
   const dispatch = useDispatch();
-  const [credentials, setCredentials] = useState({ email: '', password: '' })
+  const [email, setCEmail] = useState('')
+  const handleChange = () => {
 
-  const { email, password } = credentials;
+  }
 
   return (
     <>
@@ -21,6 +22,18 @@ const PasswordReset = () => {
         <div className='modal-wrapper d-flex'>
           <div className='heading text--center mx-4'>
             <h1 className='mx-2 text--primary'>Reset Password</h1>
+            <div className='form--group'>
+              <label className='text--secondary'>Email</label>
+              <input
+                value={email}
+                onChange={handleChange}
+                name='email'
+                placeholder='Reset link will be sent to this here'
+                className='border-bottom form--control'
+                type='text'
+                id='email'
+              />
+            </div>
             <div className='btn--group my-2' style={{ padding: '20px' }}>
               <button
                 className='btn btn-primary btn--round text--secondary'
