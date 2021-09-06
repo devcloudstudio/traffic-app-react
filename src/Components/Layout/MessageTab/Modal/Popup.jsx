@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Modal from "../../../Modal/Modal"
-import PopUp from "../../Ads/PopUp"
+import PopUp from "../../Ads/Popup"
 
 
 const PopupModal = (props) => {

@@ -4,8 +4,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import { SwitchColor } from "../../Hooks/SwitchColor";
 
 export const UserRoute = ({ component: Component, ...rest }) => {
-  //const isAuthenticated = !!localStorage.getItem("user-token");
-  const isAuthenticated = true;
+  const isAuthenticated = !!localStorage.getItem("user-token");
+  //const isAuthenticated = true;
   const [lightMode, setLightMode] = SwitchColor();
 
   return (

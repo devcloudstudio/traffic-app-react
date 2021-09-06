@@ -22,13 +22,16 @@ const Hijack = (props) => {
           <h1 className="mx-2 text--primary text--bolder">Hijack</h1><span className="text--secondary">Hijack this Content</span>
         </div>
         <div className="modal--image">
-          <img src={t.img !== null ? t.img : ""} />
+        <iframe src={t.link} frameborder="0" style={{width: '100%'}}></iframe>
+        
           <div className="content">
-            <h3 className="text--secondary">Title</h3>
-            <p className="text--white">{t.title !== null ? t.title : " "} </p>
+            
+            
           </div>
         </div>
         <div className="btn--group" style={{ flexDirection: "column" }}>
+          <h3 className="text--secondary">Title</h3>
+          <p className="text--white">{t.title !== null ? t.title : " "} </p>
           {/* <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("brand")}>Select Brand</button>
           <button className="btn btn-outline-primary btn--round text--primary btn-modal" onClick={() => pushHandler("message")}>Select Ad Content</button> */}
           <button className={`btn text--primary btn--round btn-modal btn-outline-primary ${hijackObject.brand === undefined ? '' : 'nav-form'}`} onClick={() => { props.setModal("BrandChooser"); showHandler() }}>Select Brand</button>

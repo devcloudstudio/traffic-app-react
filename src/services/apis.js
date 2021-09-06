@@ -186,13 +186,14 @@ export default {
         const {
           data: { contentData },
         } = await axios.post(
-          "https://traffic-application.herokuapp.com/api/user/activity/hijack/content",
+          "http://localhost:5000/api/user/activity/hijack/content",
           {
             message: content.message,
             brand_img: content.brand_img,
             trend_img: content.trend_img,
             title: content.title,
             link: content.link,
+            messageStyle: content.messageStyle
           },
           {
             headers: {

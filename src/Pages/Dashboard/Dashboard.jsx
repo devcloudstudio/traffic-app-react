@@ -11,53 +11,64 @@ import NavBarRight from "../../Components/NavBarRight"
 const Dashboard = (props) => {
 
 	const [isLoading, setIsLoading] = useState(true)
-	const [stats, setStats] = useState([])
+	const [stats, setStats] = useState({})
 
 	useEffect(() => {
 
-		async function fetchArticles() {
-			setIsLoading(true)
-			const response = [
-				{
-					"title": 10,
-					"desc": 20,
-					"link": 50,
-					"img": 80
-				},
-				{
-					"title": 50,
-					"desc": 20,
-					"link": 50,
-					"img": 80
-				},
-				{
-					"title": 60,
-					"desc": 20,
-					"link": 50,
-					"img": 80
-				},
-				{
-					"title": 5,
-					"desc": 20,
-					"link": 50,
-					"img": 80
-				},
-				{
-					"title": 54,
-					"desc": 20,
-					"link": 50,
-					"img": 80
-				},
-				{
-					"title": 45,
-					"desc": 20,
-					"link": 50,
-					"img": 80
-				},
-			]
+		async function fetchStats(){
+			const { data } = await axios.get(`http://localhost:5000/api/user/activity/stats/hijack`, {
+				headers:{
+					Authorization: `Bearer: ${localStorage.getItem('user-token')}`
+				}
+			})
+
 			setIsLoading(false)
-			setStats(response)
+			setStats(data)
 		}
+
+		// async function fetchArticles() {
+		// 	setIsLoading(true)
+		// 	const response = [
+		// 		{
+		// 			"title": 10,
+		// 			"desc": 20,
+		// 			"link": 50,
+		// 			"img": 80
+		// 		},
+		// 		{
+		// 			"title": 50,
+		// 			"desc": 20,
+		// 			"link": 50,
+		// 			"img": 80
+		// 		},
+		// 		{
+		// 			"title": 60,
+		// 			"desc": 20,
+		// 			"link": 50,
+		// 			"img": 80
+		// 		},
+		// 		{
+		// 			"title": 5,
+		// 			"desc": 20,
+		// 			"link": 50,
+		// 			"img": 80
+		// 		},
+		// 		{
+		// 			"title": 54,
+		// 			"desc": 20,
+		// 			"link": 50,
+		// 			"img": 80
+		// 		},
+		// 		{
+		// 			"title": 45,
+		// 			"desc": 20,
+		// 			"link": 50,
+		// 			"img": 80
+		// 		},
+		// 	]
+		// 	setIsLoading(false)
+		// 	setStats(response)
+		// }
 
 		/*async function fetchArticles() {
 			if (ls.get('articles')) {
@@ -79,7 +90,8 @@ const Dashboard = (props) => {
 			}
 		}*/
 
-		fetchArticles()
+		//fetchArticles()
+		fetchStats()
 	}, []);
 
 
@@ -103,6 +115,20 @@ const Dashboard = (props) => {
 	}
 
 
+	const hijacked = stats?.hijacks
+	const messages = stats?.user_messages
+	const user_brands = stats?.user_brands
+
+	const hijackedTitle = hijacked?.title || ''
+	const hijackedLength = hijacked?.amount || ''
+	
+	const messagesTitle = messages?.title || ''
+	const messageAmount = messages?.amount || ''
+
+	const brandTitle = user_brands?.title || ''
+	const brandLength = user_brands?.amount || ''
+
+
 	return (
 		<>
 			{modal === "Share" ? <Share modalData={modalData} show={show} rightBtnContent="Done" leftBtnContent="Back" onCancel={onCancel} /> : null}
@@ -116,15 +142,17 @@ const Dashboard = (props) => {
 					<div className="navbar my-2">
 						<ul className="d-flex list-item-group nav nav-left border">
 							<li className="list-item">
-								<div className="form--container">
+								{/* <div className="form--container">
 									<input className="nav-form" type="text" placeholder="search by keywords" /><i className="fas fa-search"></i>
-								</div>
+								</div> */}
 							</li>
 						</ul>
 						<NavBarRight />
 					</div>
 
-					<StatGrid stats={stats} setModal={setModal} setModalData={setModalData} showHandler={showHandler} />
+					<StatGrid hijackedTitle={hijackedTitle} 
+						hijackedLength={hijackedLength}	
+					/>
 					{isLoading && <Loader />}
 
 				</div>

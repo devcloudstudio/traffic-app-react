@@ -1,20 +1,16 @@
-import React, { useEffect } from "react"
-import { useSelector, useDispatch } from 'react-redux'
-import { getHiJacks } from "../../../Redux/actions/userActions";
+import React from "react"
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Card = ({ setModal, showHandler, setModalData }) => {
 	const hijackedData = useSelector(state => state.hijacks.hijacked_content) || []
-
-	// const dispatch = useDispatch();
-	// useEffect(() => {
-	// 	dispatch(getHiJacks())
-	// }, [])
+	console.log(hijackedData, 'hijacked')
 
 	return (
 		<>
 			<div className="cards">
 				{hijackedData.map((article) => (
-					<div className="card" style={{ position: 'relative' }}> {/*CARD Start */}
+						<div className="card" style={{ position: 'relative' }}> {/*CARD Start */}
 						<div style={{ display: 'flex', flexDirection: 'row' }}>
 							<div><img className="hijack-card-brand-img" alt="a" src={article.brand_img} /></div>
 							<h4 className="text--white" style={{ margin: "5px" }}>{article.title}</h4>
@@ -27,17 +23,15 @@ const Card = ({ setModal, showHandler, setModalData }) => {
 									setModal(article.link)
 									showHandler()
 								}}> <i className="text--primary fas fa-share-alt"></i></span>
-									{/* <button className="btn btn-outline-primary text--primary m-card-btn" onClick={() => {
+									<button className="btn btn-outline-primary text--primary m-card-btn" onClick={() => {
 										setModal("Hijack")
 										setModalData(article)
 										showHandler()
-									}}>Hijack</button> */}
-									<button className="btn btn-primary m-card-btn" onClick={() => {
-										// setModal("ContentPreview")
-										// setModalData(article)
-										// showHandler()
-										window.open(`http://localhost:3000/post/article/${article.id}`, "_blank")
-									}}><span className="fa fa-eye"></span></button>
+									}}>Hijack</button>
+									
+									<Link to={`/post/article/${article._id}`}>
+									<button className="btn btn-primary m-card-btn"><span className="fa fa-eye"></span></button>
+									</Link>
 								</div>
 							</div>
 							<div className="card-footer">

@@ -137,8 +137,8 @@ export const getLeads = () => async (dispatch) => {
 
 export const getHiJacks = () => async (dispatch) => {
   try {
-    //const hijackedContent = await api.user.fetchHijack();
-    const hijackedContent = mockHijackedTrends;
+    const hijackedContent = await api.user.fetchHijack();
+    //const hijackedContent = mockHijackedTrends;
     dispatch({
       type: GET_HIJACKED_CONTENT,
       payload: hijackedContent,

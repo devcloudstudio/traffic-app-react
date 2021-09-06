@@ -17,11 +17,28 @@ const BrandChooser = (props) => {
 
   const listsRef = useRef(new Array())
   const brands = useSelector((state) => state.brands) || []
+
+  console.log(brands)
+
   //const brands = api_brands;
 
   const brandSelected = (id) => {
     setHijackObjectBrand(id)
+    const r = window.confirm('save this brand')
+		if (r === true) {
+			if (!ls.get(`brand`, id, 600000)) {
+				ls.set(`brand`, id, 600000)
+			} else if (ls.get(`brand`)) {
+				const y = window.confirm('there is already a brand saved, want to save another?')
+				if (y === true) {
+					localStorage.removeItem(`brand`)
+					ls.set(`brand`, id, 600000)
+				}
+				return false
+			}
+		} 
   }
+ 
 
   return (
     <Modal additionalStyle={{ maxHeight: '80%', overflow: 'scroll' }} show={true}>
@@ -33,10 +50,11 @@ const BrandChooser = (props) => {
           return (
             <div className={`brand-card`}>  {/*CARD START */}
               <div className="card--body">
+                <img src={brand.avatar}  style={{width: '25%', height:'25%', borderRadius: '50%'}} alt="" />
                 <div className="brand-card-topbar justify-content-center">
-                  <div>
+                  {/* <div>
                     <img src={brand.avatar} className="brand-img" />
-                  </div>
+                  </div> */}
                   <h3 className="text--white">{brand.name}</h3>
                 </div>
                 <p className="text--white brand-slogan">{brand.slogan}</p>

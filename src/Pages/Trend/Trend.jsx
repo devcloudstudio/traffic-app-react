@@ -69,7 +69,7 @@ const Trend = (props) => {
       setIsLoading(true)
       try {
         const { data } = await axios.get(
-          `https://traffic-application.herokuapp.com/api/trends/fetch/trend?keyword=${keyword}`
+          `http://localhost:5000/api/trends/fetch/trend?keyword=${keyword}`
         );
         //const data = mockTrends
         ls.set(`searches-${keyword}`, data, 86400000)

@@ -10,8 +10,12 @@ const ContentPreview = (props) => {
           <h1 className="my-2 text--primary text--bolder">Content Preview</h1><span className="text--secondary">Content Preview with your Brand and messages</span>
         </div>
         <div className="modal-card-preview">
+          {/* <div className="modal--image">
+            <img src={t.image !== null ? t.image : ""} />
+          </div> */}
           <div className="modal--image">
-            <img src={t.img !== null ? t.img : ""} />
+
+            <iframe src={t.link} frameborder="0" style={{width: '100%'}}></iframe>
           </div>
           <div className="card--body px-2">
             <h3 className="text--bolder text--white">{t.title !== null ? t.title : " "}</h3>

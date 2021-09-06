@@ -20,7 +20,7 @@ const PopUp = (props) => {
                   <span style={{ margin: '10px', cursor: 'pointer' }} className="close" class="fa fa-times" aria-hidden="true" onClick={() => props.onClose()}>
                   </span>
                </div>
-               {ad_data?.img ? <img className="popup-ad-img" src={ad_data.img} alt={brand.name} /> : < h2 style={{ margin: 'auto' }} > {brand.name}</h2>}
+                <img className="popup-ad-img" src='https://i.guim.co.uk/img/media/7a0f078ae4a9358c3dd98ddcd583af19d16ab91d/0_132_4633_2779/master/4633.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=d1a282b95726433bee2a41e265814376' alt='' /> : < h2 style={{ margin: 'auto' }} > mybrad</h2>
                <p>{ad_data.message}</p>
                {/* <div className="popup-form">
                <h3 className="text--primary text--center">{optinBaitText} </h3>
@@ -30,7 +30,6 @@ const PopUp = (props) => {
                <div className="form-group">
                   <input type="text" className="popup-input" placeholder={optinBestEmail} />
                </div>
-
                <button className="btn btn-primary w-100">{optinButtonText}</button>
             </div> */}
             </div>
