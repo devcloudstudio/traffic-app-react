@@ -16,7 +16,7 @@ const Dashboard = (props) => {
 	useEffect(() => {
 
 		async function fetchStats(){
-			const { data } = await axios.get(`http://localhost:5000/api/user/activity/stats/hijack`, {
+			const { data } = await axios.get(`https://traffic-application.herokuapp.com/api/user/activity/stats/hijack`, {
 				headers:{
 					Authorization: `Bearer: ${localStorage.getItem('user-token')}`
 				}
