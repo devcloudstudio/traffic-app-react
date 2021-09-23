@@ -260,7 +260,7 @@ const Trend = (props) => {
           ) : null}
           {tab === "message" ? <Message /> : null}
           {tab === "import" ? <Thumbnail /> : null}
-          {isLoading && <Loader />}
+          {isLoading && <h1 style={{color: 'white', textAlign: 'center'}}>Please sit and relax while we fetch your trends!</h1>}
         </div>
       </section>
     </>
