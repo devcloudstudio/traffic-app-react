@@ -72,7 +72,7 @@ const Trend = (props) => {
       setIsLoading(true);
       try {
         const { data } = await axios.get(
-          `http://trafficapp5-dev.us-east-1.elasticbeanstalk.com/api/trends/fetch/trends?keyword=${keyword}`
+          `http://trafficapp-api-main-dev2.us-east-1.elasticbeanstalk.com/api/trends/fetch/trends?keyword=${keyword}`
         );
         //const data = mockTrends
         ls.set(`searches-${keyword}`, data, 86400000);
